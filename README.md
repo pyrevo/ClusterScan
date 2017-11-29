@@ -18,9 +18,11 @@ ClusterScan requires [Python](https://www.python.org/downloads/release/python-27
 Finally, in order to draw high quality clusters distributions for features in the top 10 clusters found (by number of features), it is also required to install the R library [ggplot2](http://ggplot2.org/) (v2.0.0+). ClusterScan is tested on [Ubuntu](https://www.ubuntu.com/) (v14.04LTS+)
 
 ## Options:
+ClusterScan provides different parameters in order to finely tune the cluster search. Some of them are algorithm-specific whereas other are in common between clusterdist and clustermean:
+
 ```
 clusterdist:
-  -d, --dist=<bp>		Maximum distance between features in bp [default: 500000].
+  -d, --dist=<bp>	Maximum distance between features in bp [default: 500000].
 
 clustermean:
   -w, --window=<bp>	Window size [default: 500000].
@@ -34,7 +36,11 @@ shared options:
   -n, --nf=<n>		Minimum number of features per cluster [default: 2].
   --info FILE		Specify optional file to describe accessions.
 ```
-example of execution: clusterscan.py clusterdist my_genes.bed my_accessions.txt -d 250000 -a analysis_01
+
+An example of execution:
+```
+python clusterscan.py clusterdist my_genes.bed my_accessions.txt -d 250000 -a analysis_01
+```
 
 ## Input/Output:
 ClusterScan is composed by two files: _clusterscan.py_ and _docopt.py_. The first represent the tool itself while the latter is a  dependence that provides an interface for the command-line menu. The two files need to be in the same folder.
