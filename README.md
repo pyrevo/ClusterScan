@@ -1,2 +1,2 @@
 # ClusterScan
-ClusterScan, search for clusters of features in a given annotation.
+search for clusters of features in a given annotation.
