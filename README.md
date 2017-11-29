@@ -15,7 +15,7 @@ ClusterScan requires [Python](https://www.python.org/downloads/release/python-27
 - [pandas](https://pandas.pydata.org/)
 - [rpy2](https://rpy2.readthedocs.io/en/version_2.8.x/)
 
-Finally, in order to draw high quality clusters distributions for features in the top 10 clusters found (by number of features), it is also required to install the R library [ggplot2](http://ggplot2.org/) (v2.0.0+). ClusterScan is tested on [Ubuntu](https://www.ubuntu.com/) (v12.04LTS+)
+Finally, in order to draw high quality clusters distributions for features in the top 10 clusters found (by number of features), it is also required to install the R library [ggplot2](http://ggplot2.org/) (v2.0.0+). ClusterScan is tested on [Ubuntu](https://www.ubuntu.com/) (v14.04LTS+)
 
 ## Options:
 ```
