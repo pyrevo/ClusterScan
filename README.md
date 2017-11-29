@@ -52,5 +52,5 @@ ClusterScan gives six files in output:
 |		bystanders.csv | is a list of bystanders found to be in overlap with clusters. It contains exactly the same fields described for the file features.csv. |
 |		distribution.pdf | is an histogram which shows the distribution of features in the per-accession top-10 clusters by number of features. |
 
-## Disambiguating the meaning ID and ACC terms:
-In ClusterScan the word _ID_ refers to the cluster identifier. An ID for each cluster is assigned during the analysis joining the “C” letter with a progressive number starting from 1. Contrariwise the word _ACC_ refers to the database accessions used to classify the features. They can come from Gene Ontology, KEGG, Pfam, etc. but the user can also use its own custom set of accessions and describe them using a third two-column tab-delimited .txt file (ACC, description) that can be read by the program through the --info parameter.
+## Disambiguating the meaning of ID and ACC acronyms:
+In ClusterScan the word _ID_ refers to the cluster identifier. An ID for each cluster is assigned during the analysis joining the “C” letter with a progressive number starting from 1. Contrariwise the word _ACC_ refers to the database accessions used to classify the features. They can come from Gene Ontology, KEGG, Pfam, etc. but the user can also use its own custom set of accessions and describe them using a third two-column tab-delimited .txt file (ACC, description) that can be read by the program (p: --info).
