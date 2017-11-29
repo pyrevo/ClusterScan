@@ -43,17 +43,14 @@ ClusterScan requires two mandatory files and an optional file in input. The firs
 
 ClusterScan gives six files in output:
 
-*clusters.csv* stores the coordinates of all the clusters found. It contains an ID for each cluster; the accession (ACC) for which the cluster was composed; the chromosome/scaffold (chr) on which it resides; its start and end coordinates; the number of features within the cluster (n_features) and the number of features which overlap the cluster but belong to a different kind of accession (n_bystanders).
-
-*clusters.bed* a bed version of the previous file for bedtools/bedops compatibility. Fields respect the format and  are (from first to last column): chromosome/scaffold on which the cluster resides; its start/end coordinates using a 0-based start and 1-based end system of coordinates; the cluster ID; the number of features within the cluster; the strand; the cluster accession.
-
-*summary.csv* contains a per-accession summary of the cluster analysis with the accession (ACC); the number of clusters found for that accession (n_clusters) the total number of features found for clusters belonging to that accession (n_ft); the number of bystanders (n_bs); the number of features and bystanders found in the clusters which contains the minimal and the maximal number of these features (max_ft and min_ft / max_bs and min_bs).
-
-*features.csv* is a list of features found to be in overlap with clusters. It contains the chromosome/scaffold (chr) on which it resides; its start and end coordinates; the feature name; the score; the strand; an ID of the cluster on which it overlaps (cluster_ID); the accession of the cluster in which it overlaps (cluster_ACC).
-
-*bystanders.csv* is a list of bystanders found to be in overlap with clusters. It contains exactly the same fields described for the file features.csv.
-
-*distribution.pdf* is an histogram which shows the distribution of features in the per-accession top-10 clusters by number of features.
+|File|Description|
+|---|---|
+|	clusters.csv | stores the coordinates of all the clusters found. It contains an ID for each cluster; the accession (ACC) for which the cluster was composed; the chromosome/scaffold (chr) on which it resides; its start and end coordinates; the number of features within the cluster (n_features) and the number of features which overlap the cluster but belong to a different kind of accession (n_bystanders). |
+|		clusters.bed | a bed version of the previous file for bedtools/bedops compatibility. Fields respect the format and  are (from first to last column): chromosome/scaffold on which the cluster resides; its start/end coordinates using a 0-based start and 1-based end system of coordinates; the cluster ID; the number of features within the cluster; the strand; the cluster accession. |
+|		summary.csv | contains a per-accession summary of the cluster analysis with the accession (ACC); the number of clusters found for that accession (n_clusters) the total number of features found for clusters belonging to that accession (n_ft); the number of bystanders (n_bs); the number of features and bystanders found in the clusters which contains the minimal and the maximal number of these features (max_ft and min_ft / max_bs and min_bs). |
+|		features.csv | is a list of features found to be in overlap with clusters. It contains the chromosome/scaffold (chr) on which it resides; its start and end coordinates; the feature name; the score; the strand; an ID of the cluster on which it overlaps (cluster_ID); the accession of the cluster in which it overlaps (cluster_ACC). |
+|		bystanders.csv | is a list of bystanders found to be in overlap with clusters. It contains exactly the same fields described for the file features.csv. |
+|		distribution.pdf | is an histogram which shows the distribution of features in the per-accession top-10 clusters by number of features. |
 
 ## Differences between ID and ACC:
 In ClusterScan the word _ID_ refers to the cluster identifier. An ID for each cluster is assigned during the analysis joining the “C” letter with a progressive number starting from 1. Contrariwise the word _ACC_ refers to the database accessions used to classify the features. They can come from Gene Ontology, KEGG, Pfam, etc. but the user can also use its own custom set of accessions and describe them using a third two-column tab-delimited .txt file (ACC, description) that can be read by the program through the --info parameter.
