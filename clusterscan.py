@@ -102,7 +102,7 @@ def main():
     options_tester(int(arguments['--extension']), 1, error3)
 
     # build database
-    feat = pd.read_table(arguments['FEATURES'], header=None, usecols=range(6))
+    feat = pd.read_table(arguments['FEATURES'], header=None, usecols=range(6), dtype={0: str})
     anno = pd.read_table(arguments['ANNOTATION'], header=None)
 
     feat.columns = ['chr', 'start', 'end', 'name', 'score', 'strand']
@@ -113,7 +113,7 @@ def main():
     pdtable = pd.merge(feat, anno, on='name', how='outer')
     pdtable['ACC'] = pdtable['ACC'].fillna("Unknown")
     pdtable = pdtable[pd.notnull(pdtable['ACC'])]
-    pdtable = pdtable[pd.notnull(pdtable['chr'].astype(str))]
+    pdtable = pdtable[pd.notnull(pdtable['chr'])]
     pdtable[['start', 'end']] = pdtable[['start', 'end']].astype(int)
     pdtable = pdtable.drop_duplicates(['name', 'ACC'])
     #movq print str(pdtable)
