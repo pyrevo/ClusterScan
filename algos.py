@@ -2,7 +2,8 @@ import string
 import pybedtools
 import pandas as pd
 
-def cluster_composer(final_list, pre_cluster_object, pre_cluster_intersection):
+def cluster_composer(pre_cluster_object, pre_cluster_intersection):
+    final_list = []
     """Find real feature's positions."""
     tmp = []
     for item in pre_cluster_object:
@@ -101,14 +102,17 @@ def do_clustermean(accList, pdTbl, tbl, sargs):
 
         pre_clusters = pybedtools.BedTool(extended_seed)
         features_in_clusters = BEDtools_object.intersect(pre_clusters, wa=True)
-        final_list = []
-        cluster_composer(final_list, pre_clusters, features_in_clusters)
+        
+        final_list = cluster_composer(pre_clusters, features_in_clusters)
 
-        final_clusters = pybedtools.BedTool(final_list)
-        final_clusters = final_clusters.intersect(BEDtools_object, c=True)
-        final_clusters = pd.read_table(final_clusters.fn, header=None)
-        final_clusters[5] = ACC
-        tbl = tbl.append(final_clusters)
+        try:
+            final_clusters = pybedtools.BedTool(final_list)
+            final_clusters = final_clusters.intersect(BEDtools_object, c=True)  
+            final_clusters = pd.read_table(final_clusters.fn, header=None)
+            final_clusters[5] = ACC
+            tbl = tbl.append(final_clusters)
+        except Exception as e:
+            pass
 
     return tbl
 

@@ -59,13 +59,6 @@ def options_tester(option, n, string):
     else:
         pass
 
-
-
-
-
-
-
-
 def rpy2_plotter(anno, clusters, name):
     """Plot genes distribution in clusters using ggplot2 from R."""
     pandas2ri.activate()
@@ -120,9 +113,10 @@ def main():
     pdtable = pd.merge(feat, anno, on='name', how='outer')
     pdtable['ACC'] = pdtable['ACC'].fillna("Unknown")
     pdtable = pdtable[pd.notnull(pdtable['ACC'])]
-    pdtable = pdtable[pd.notnull(pdtable['chr'])]
+    pdtable = pdtable[pd.notnull(pdtable['chr'].astype(str))]
     pdtable[['start', 'end']] = pdtable[['start', 'end']].astype(int)
     pdtable = pdtable.drop_duplicates(['name', 'ACC'])
+    #movq print str(pdtable)
     all_features = pdtable
     pdtable = pdtable[pdtable['ACC'] != "Unknown"]
 
@@ -220,7 +214,6 @@ def main():
     #print str(table)
     # generate output of clusters in BED format
     bed = table.copy()
-    print str(bed)
     bed["strand"] = "+"
     bed = pybedtools.BedTool().from_dataframe(bed[[0, 1, 2, 5, 3, 6, 4]]).sort()
 
