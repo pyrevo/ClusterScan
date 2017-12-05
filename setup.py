@@ -9,7 +9,9 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 requires = [
-    'pandas',
+    'pandas==0.19.1',
+    'pybedtools==0.7.8',
+    'rpy2==2.8.3',
 ]
 
 setup(name='clusterscan',

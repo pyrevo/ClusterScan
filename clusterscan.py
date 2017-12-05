@@ -35,6 +35,8 @@ from rpy2 import robjects
 from rpy2.robjects import pandas2ri
 from rpy2.robjects.packages import importr
 
+from algos import *
+
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     import rpy2.robjects.lib.ggplot2 as ggplot2
@@ -58,69 +60,10 @@ def options_tester(option, n, string):
         pass
 
 
-def window_maker(list_name, filled_list, window_size, slide_size):
-    """Make a bed file of sliding windows."""
-    for scaffold, start, end in filled_list:
-        width = window_size
-        step = slide_size
-
-        if width <= end:
-            list_name.append((scaffold, start, width))
-        else:
-            list_name.append((scaffold, start, end))
-
-        while width <= end:
-            start += step
-            width += step
-            if width >= end:
-                list_name.append((scaffold, start, end))
-            else:
-                list_name.append((scaffold, start, width))
-    return list_name
 
 
-def seed_extender(new_list, indexes, intersection, limit):
-    """Extends culster's seeds."""
-    for index in indexes:
-        cluster_pos = []
-        scaffold = intersection[index][0]
-        right_step = index
-        left_step = index
-        while int(intersection[left_step][3]) >= limit and intersection[left_step][0] == scaffold:
-            if int(intersection[left_step][1]) not in cluster_pos:
-                cluster_pos.append(int(intersection[left_step][1]))
-            if (left_step - 1) >= 0:
-                left_step -= 1
-            else:
-                break
-        while int(intersection[right_step][3]) >= limit and intersection[right_step][0] == scaffold:
-            if int(intersection[right_step][2]) not in cluster_pos:
-                cluster_pos.append(int(intersection[right_step][2]))
-            if (right_step + 1) <= max(indexes):
-                right_step += 1
-            else:
-                break
-        cluster = (str(scaffold), min(cluster_pos), max(cluster_pos))
-        if cluster not in new_list:
-            new_list.append(cluster)
-    return new_list
 
 
-def cluster_composer(final_list, pre_cluster_object, pre_cluster_intersection):
-    """Find real feature's positions."""
-    tmp = []
-    for item in pre_cluster_object:
-        scaffold = str(item[0])
-        for line in pre_cluster_intersection:
-            line = str(line)
-            if line.split()[0] == scaffold and (int(item[1]) <= int(line.split()[1]) <= int(item[2]) and int(item[1]) <= int(line.split()[2]) <= int(item[2])):
-                tmp.append(int(line.split()[1]))
-                tmp.append(int(line.split()[2]))
-            else:
-                continue
-        final_list.append((scaffold, min(tmp), max(tmp)))
-        tmp = []
-    return final_list
 
 
 def rpy2_plotter(anno, clusters, name):
@@ -192,70 +135,75 @@ def main():
     if arguments['clusterdist'] is True:
         print "ClusterScan is running with clusterdist..."
 
+        # movq: arguments should be changed
+        table = do_clusterdist(l,pdtable, table, arguments)
+        #print resTable
         # for each accession merge features getting clusters
-        for ACC in l:
-            df = pdtable[pdtable.ACC == ACC]
-            BEDtools_object = pybedtools.BedTool().from_dataframe(df).sort()
+        #for ACC in l:
+        #    df = pdtable[pdtable.ACC == ACC]
+        #    BEDtools_object = pybedtools.BedTool().from_dataframe(df).sort()
 
-            try:
-                merge = BEDtools_object.merge(d=int(arguments['--dist']), c=4, o="count_distinct")
-            except:
-                continue
+        #    try:
+        #        merge = BEDtools_object.merge(d=int(arguments['--dist']), c=4, o="count_distinct")
+        #    except:
+        #        continue
 
-            df = pd.read_table(merge.fn, header=None)
-            df[4] = ACC
-            table = table.append(df)
+        #    df = pd.read_table(merge.fn, header=None)
+        #    df[4] = ACC
+        #    table = table.append(df)
     else:
         print "ClusterScan is running with clustermean..."
 
-        # for each chromosome determine its length as last feature end
-        loc = list(pdtable.chr.unique())
-        chr_len = []
+        table = do_clustermean(l, pdtable, table, arguments)
 
-        for chr in loc:
-            df = pdtable[pdtable.chr == chr]
-            chr_len.append((chr, 0, max(df.end)))
+        ## for each chromosome determine its length as last feature end
+        #loc = list(pdtable.chr.unique())
+        #chr_len = []
 
-        windows = []
-        window_maker(windows, chr_len, int(arguments['--window']), int(arguments['--slide']))
-        win_bed = pybedtools.BedTool(windows)
+        #for chr in loc:
+        #    df = pdtable[pdtable.chr == chr]
+        #    chr_len.append((chr, 0, max(df.end)))
 
-        # for each accession compute clusters
-        for ACC in l:
-            df = pdtable[pdtable.ACC == ACC]
-            BEDtools_object = pybedtools.BedTool().from_dataframe(df)
+        #windows = []
+        #window_maker(windows, chr_len, int(arguments['--window']), int(arguments['--slide']))
+        #win_bed = pybedtools.BedTool(windows)
 
-            # intersect features to windows
-            try:
-                intersect_bed = win_bed.intersect(BEDtools_object, c=True)
-            except:
-                continue
+        ## for each accession compute clusters
+        #for ACC in l:
+        #    df = pdtable[pdtable.ACC == ACC]
+        #    BEDtools_object = pybedtools.BedTool().from_dataframe(df)
 
-            df = pd.read_table(intersect_bed.fn, header=None, dtype={0: str})
-            df[4] = ACC
+        #    # intersect features to windows
+        #    try:
+        #        intersect_bed = win_bed.intersect(BEDtools_object, c=True)
+        #    except:
+        #        continue
 
-            # compute mean and stdv feature density per-window
-            mean = df[3].mean()
-            stdv = df[3].std()
+        #    df = pd.read_table(intersect_bed.fn, header=None, dtype={0: str})
+        #    df[4] = ACC
 
-            multi1 = mean + (int(arguments['--seed'])*stdv)
-            multi2 = mean + (int(arguments['--extension'])*stdv)
+        #    # compute mean and stdv feature density per-window
+        #    mean = df[3].mean()
+        #    stdv = df[3].std()
 
-            # extract seeds and try to extend them
-            seed_list = df[df[3] >= multi1].index.tolist()
-            extended_seed = []
-            seed_extender(extended_seed, seed_list, intersect_bed, multi2)
+        #    multi1 = mean + (int(arguments['--seed'])*stdv)
+        #    multi2 = mean + (int(arguments['--extension'])*stdv)
 
-            pre_clusters = pybedtools.BedTool(extended_seed)
-            features_in_clusters = BEDtools_object.intersect(pre_clusters, wa=True)
-            final_list = []
-            cluster_composer(final_list, pre_clusters, features_in_clusters)
+        #    # extract seeds and try to extend them
+        #    seed_list = df[df[3] >= multi1].index.tolist()
+        #    extended_seed = []
+        #    seed_extender(extended_seed, seed_list, intersect_bed, multi2)
 
-            final_clusters = pybedtools.BedTool(final_list)
-            final_clusters = final_clusters.intersect(BEDtools_object, c=True)
-            final_clusters = pd.read_table(final_clusters.fn, header=None)
-            final_clusters[5] = ACC
-            table = table.append(final_clusters)
+        #    pre_clusters = pybedtools.BedTool(extended_seed)
+        #    features_in_clusters = BEDtools_object.intersect(pre_clusters, wa=True)
+        #    final_list = []
+        #    cluster_composer(final_list, pre_clusters, features_in_clusters)
+
+        #    final_clusters = pybedtools.BedTool(final_list)
+        #    final_clusters = final_clusters.intersect(BEDtools_object, c=True)
+        #    final_clusters = pd.read_table(final_clusters.fn, header=None)
+        #    final_clusters[5] = ACC
+        #    table = table.append(final_clusters)
 
     # generate cluster table and filter it
     table.columns = ["chr", "start", "end", "n_features", "ACC"]
@@ -269,8 +217,10 @@ def main():
         print "ClusterScan didn't found any cluster!"
         exit()
 
+    #print str(table)
     # generate output of clusters in BED format
     bed = table.copy()
+    print str(bed)
     bed["strand"] = "+"
     bed = pybedtools.BedTool().from_dataframe(bed[[0, 1, 2, 5, 3, 6, 4]]).sort()
 
