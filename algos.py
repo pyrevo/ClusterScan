@@ -1,6 +1,29 @@
 import string
-import pybedtools
+
 import pandas as pd
+import pybedtools
+
+
+def window_maker(list_name, filled_list, window_size, slide_size):
+    """Make a bed file of sliding windows."""
+    for scaffold, start, end in filled_list:
+        width = window_size
+        step = slide_size
+
+        if width <= end:
+            list_name.append((scaffold, start, width))
+        else:
+            list_name.append((scaffold, start, end))
+
+        while width <= end:
+            start += step
+            width += step
+            if width >= end:
+                list_name.append((scaffold, start, end))
+            else:
+                list_name.append((scaffold, start, width))
+    return list_name
+
 
 def cluster_composer(pre_cluster_object, pre_cluster_intersection):
     final_list = []
@@ -19,6 +42,8 @@ def cluster_composer(pre_cluster_object, pre_cluster_intersection):
         tmp = []
     return final_list
 
+
+'''
 def seed_extender(new_list, indexes, intersection, limit):
     """Extends culster's seeds."""
     for index in indexes:
@@ -44,6 +69,8 @@ def seed_extender(new_list, indexes, intersection, limit):
         if cluster not in new_list:
             new_list.append(cluster)
     return new_list
+'''
+
 
 def do_clusterdist(accList, pdTbl, tbl, sargs):
     for ACC in accList:
@@ -59,8 +86,8 @@ def do_clusterdist(accList, pdTbl, tbl, sargs):
         df[4] = ACC
         tbl = tbl.append(df)
 
-
     return tbl
+
 
 def do_clustermean(accList, pdTbl, tbl, sargs):
     loc = list(pdTbl.chr.unique())
@@ -76,6 +103,7 @@ def do_clustermean(accList, pdTbl, tbl, sargs):
 
     # for each accession compute clusters
     for ACC in accList:
+        # print ACC
         df = pdTbl[pdTbl.ACC == ACC]
         BEDtools_object = pybedtools.BedTool().from_dataframe(df)
 
@@ -97,41 +125,56 @@ def do_clustermean(accList, pdTbl, tbl, sargs):
 
         # extract seeds and try to extend them
         seed_list = df[df[3] >= multi1].index.tolist()
-        extended_seed = []
-        seed_extender(extended_seed, seed_list, intersect_bed, multi2)
 
-        pre_clusters = pybedtools.BedTool(extended_seed)
-        features_in_clusters = BEDtools_object.intersect(pre_clusters, wa=True)
-        
-        final_list = cluster_composer(pre_clusters, features_in_clusters)
+        #NUOVO
+        df_seed = df.loc[df[3] >= multi1]
+        df_ext = df.loc[df[3] >= multi2]
+        BEDtools_seed = pybedtools.BedTool().from_dataframe(df_seed)
+        BEDtools_ext = pybedtools.BedTool().from_dataframe(df_ext)
 
         try:
-            final_clusters = pybedtools.BedTool(final_list)
-            final_clusters = final_clusters.intersect(BEDtools_object, c=True)  
-            final_clusters = pd.read_table(final_clusters.fn, header=None)
-            final_clusters[5] = ACC
-            tbl = tbl.append(final_clusters)
-        except Exception as e:
-            pass
+             # merge = BEDtools_ext.merge(c=4, o="sum")
+             merge = BEDtools_ext.merge()
+        except:
+            continue
+
+        try:
+             intersect = merge.intersect(BEDtools_seed, u=True)
+        except:
+            continue
+
+        try:
+             pre_clusters = intersect.intersect(BEDtools_object, u=True)
+        except:
+            continue
+
+        features_in_clusters = BEDtools_object.intersect(pre_clusters, wa=True)
+
+        final_list = cluster_composer(pre_clusters, features_in_clusters)
+        clusters = pybedtools.BedTool(final_list)
+        final_clusters = clusters.intersect(BEDtools_object, c=True)
+
+        tclusters = pd.read_table(final_clusters.fn, header=None)
+        tclusters[4] = ACC
+        tbl = tbl.append(tclusters)
 
     return tbl
 
-def window_maker(list_name, filled_list, window_size, slide_size):
-    """Make a bed file of sliding windows."""
-    for scaffold, start, end in filled_list:
-        width = window_size
-        step = slide_size
+'''
+        #extended_seed = []
+        #seed_extender(extended_seed, seed_list, intersect_bed, multi2)
 
-        if width <= end:
-            list_name.append((scaffold, start, width))
-        else:
-            list_name.append((scaffold, start, end))
+        #pre_clusters = pybedtools.BedTool(extended_seed)
+        #features_in_clusters = BEDtools_object.intersect(pre_clusters, wa=True)
 
-        while width <= end:
-            start += step
-            width += step
-            if width >= end:
-                list_name.append((scaffold, start, end))
-            else:
-                list_name.append((scaffold, start, width))
-    return list_name
+        #final_list = cluster_composer(pre_clusters, features_in_clusters)
+
+        #try:
+            #final_clusters = pybedtools.BedTool(final_list)
+            #final_clusters = final_clusters.intersect(BEDtools_object, c=True)  
+            #final_clusters = pd.read_table(final_clusters.fn, header=None)
+            #final_clusters[5] = ACC
+            #tbl = tbl.append(final_clusters)
+        #except Exception as e:
+            #pass
+'''
