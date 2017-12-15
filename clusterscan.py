@@ -109,7 +109,7 @@ def main():
 
     feat.columns = ['chr', 'start', 'end', 'name', 'score', 'strand']
     anno.columns = ['name', 'ACC']
-    #anno['ACC'] = anno['ACC'].fillna("Unknown")
+    # anno['ACC'] = anno['ACC'].fillna("Unknown")
     n = list(feat.name.unique())
 
     # pdtable stores genes annotation and corresponding accessions
@@ -119,7 +119,7 @@ def main():
     pdtable = pdtable[pd.notnull(pdtable['chr'])]
     pdtable[['start', 'end']] = pdtable[['start', 'end']].astype(int)
     pdtable = pdtable.drop_duplicates(['name', 'ACC'])
-    #movq print str(pdtable)
+    # movq print str(pdtable)
     all_features = pdtable
     pdtable = pdtable[pdtable['ACC'] != "Unknown"]
 
@@ -134,73 +134,10 @@ def main():
 
         # movq: arguments should be changed
         table = do_clusterdist(l,pdtable, table, arguments)
-        #print resTable
-        # for each accession merge features getting clusters
-        #for ACC in l:
-        #    df = pdtable[pdtable.ACC == ACC]
-        #    BEDtools_object = pybedtools.BedTool().from_dataframe(df).sort()
-
-        #    try:
-        #        merge = BEDtools_object.merge(d=int(arguments['--dist']), c=4, o="count_distinct")
-        #    except:
-        #        continue
-
-        #    df = pd.read_table(merge.fn, header=None)
-        #    df[4] = ACC
-        #    table = table.append(df)
     else:
         print "ClusterScan is running with clustermean..."
 
         table = do_clustermean(l, pdtable, table, arguments)
-
-        ## for each chromosome determine its length as last feature end
-        #loc = list(pdtable.chr.unique())
-        #chr_len = []
-
-        #for chr in loc:
-        #    df = pdtable[pdtable.chr == chr]
-        #    chr_len.append((chr, 0, max(df.end)))
-
-        #windows = []
-        #window_maker(windows, chr_len, int(arguments['--window']), int(arguments['--slide']))
-        #win_bed = pybedtools.BedTool(windows)
-
-        ## for each accession compute clusters
-        #for ACC in l:
-        #    df = pdtable[pdtable.ACC == ACC]
-        #    BEDtools_object = pybedtools.BedTool().from_dataframe(df)
-
-        #    # intersect features to windows
-        #    try:
-        #        intersect_bed = win_bed.intersect(BEDtools_object, c=True)
-        #    except:
-        #        continue
-
-        #    df = pd.read_table(intersect_bed.fn, header=None, dtype={0: str})
-        #    df[4] = ACC
-
-        #    # compute mean and stdv feature density per-window
-        #    mean = df[3].mean()
-        #    stdv = df[3].std()
-
-        #    multi1 = mean + (int(arguments['--seed'])*stdv)
-        #    multi2 = mean + (int(arguments['--extension'])*stdv)
-
-        #    # extract seeds and try to extend them
-        #    seed_list = df[df[3] >= multi1].index.tolist()
-        #    extended_seed = []
-        #    seed_extender(extended_seed, seed_list, intersect_bed, multi2)
-
-        #    pre_clusters = pybedtools.BedTool(extended_seed)
-        #    features_in_clusters = BEDtools_object.intersect(pre_clusters, wa=True)
-        #    final_list = []
-        #    cluster_composer(final_list, pre_clusters, features_in_clusters)
-
-        #    final_clusters = pybedtools.BedTool(final_list)
-        #    final_clusters = final_clusters.intersect(BEDtools_object, c=True)
-        #    final_clusters = pd.read_table(final_clusters.fn, header=None)
-        #    final_clusters[5] = ACC
-        #    table = table.append(final_clusters)
 
     # generate cluster table and filter it
     table.columns = ["chr", "start", "end", "n_features", "ACC"]
@@ -216,7 +153,6 @@ def main():
         print "ClusterScan didn't found any cluster!"
         exit()
 
-    #print str(table)
     # generate output of clusters in BED format
     bed = table.copy()
     bed["strand"] = "+"
@@ -234,6 +170,12 @@ def main():
 
     # generate table of bystanders
     bystanders = features[features[6] != features[11]]
+
+    # comment if you want to search for bystanders using only 1 accession
+    if len(l) == 1:
+        bystanders = pd.DataFrame()
+    else:
+        pass
 
     # control for bystander = 0 (when program run with 1 accession)
     if bystanders.empty:
