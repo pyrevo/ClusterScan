@@ -25,7 +25,8 @@ Options:
   --version                         Show program version.
 """
 
-
+import time
+import os
 import warnings
 
 import pandas as pd
@@ -41,6 +42,7 @@ with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     import rpy2.robjects.lib.ggplot2 as ggplot2
 
+start_time = time.time()
 
 def input_tester(file_path):
     """Check for the presence of input files."""
@@ -108,6 +110,7 @@ def main():
     feat.columns = ['chr', 'start', 'end', 'name', 'score', 'strand']
     anno.columns = ['name', 'ACC']
     #anno['ACC'] = anno['ACC'].fillna("Unknown")
+    n = list(feat.name.unique())
 
     # pdtable stores genes annotation and corresponding accessions
     pdtable = pd.merge(feat, anno, on='name', how='outer')
@@ -206,6 +209,8 @@ def main():
     table = table.sort_values(by=["ACC"], ascending=[True])
     # table['ID'] = range(1, len(table) + 1)
     table['ID'] = ["C"+str(i) for i in range(1, len(table) + 1)]
+    # get the total number of clusters
+    c = table.shape[0]
 
     if table.empty:
         print "ClusterScan didn't found any cluster!"
@@ -277,20 +282,23 @@ def main():
         summary = n_clusters.merge(n_ft_bs, on='ACC').merge(max_ft_bs, on='ACC').merge(min_ft_bs, on='ACC').merge(desc, on='ACC')
 
     # assign file names and save tables as result
+    if not os.path.exists(arguments['--output']):
+        os.makedirs(arguments['--output'])
+
     if arguments['--analysis'] is None:
-        feat_name = arguments['--output'] + 'features.csv'
-        byst_name = arguments['--output'] + 'bystanders.csv'
-        clus_name = arguments['--output'] + 'clusters.csv'
-        summ_name = arguments['--output'] + 'summary.csv'
-        bed_name = arguments['--output'] + 'clusters.bed'
-        plot_name = arguments['--output'] + 'distribution.pdf'
+        feat_name = os.path.join(arguments['--output'], 'features.csv')
+        byst_name = os.path.join(arguments['--output'], 'bystanders.csv')
+        clus_name = os.path.join(arguments['--output'], 'clusters.csv')
+        summ_name = os.path.join(arguments['--output'], 'summary.csv')
+        bed_name = os.path.join(arguments['--output'], 'clusters.bed')
+        plot_name = os.path.join(arguments['--output'], 'distribution.pdf')
     else:
-        feat_name = arguments['--output'] + arguments['--analysis'] + '_features.csv'
-        byst_name = arguments['--output'] + arguments['--analysis'] + '_bystanders.csv'
-        clus_name = arguments['--output'] + arguments['--analysis'] + '_clusters.csv'
-        summ_name = arguments['--output'] + arguments['--analysis'] + '_summary.csv'
-        bed_name = arguments['--output'] + arguments['--analysis'] + '_clusters.bed'
-        plot_name = arguments['--output'] + arguments['--analysis'] + '_distribution.pdf'
+        feat_name = os.path.join(arguments['--output'], arguments['--analysis']+'_features.csv')
+        byst_name = os.path.join(arguments['--output'], arguments['--analysis']+'_bystanders.csv')
+        clus_name = os.path.join(arguments['--output'], arguments['--analysis']+'_clusters.csv')
+        summ_name = os.path.join(arguments['--output'], arguments['--analysis']+'_summary.csv')
+        bed_name = os.path.join(arguments['--output'], arguments['--analysis']+'_clusters.bed')
+        plot_name = os.path.join(arguments['--output'], arguments['--analysis']+'_distribution.pdf')
 
     table["start"] += 1
     cl_features.to_csv(feat_name, sep='\t', header=True, index=False)
@@ -306,10 +314,14 @@ def main():
     # plot a duistribution for top 10 clusters (per n of features)
     rpy2_plotter(summary, table, plot_name)
 
-    print "Done!"
+    print '\n%s\t%s' % ("Total number of unique features in input:", len(n))
+    print '%s\t%s' % ("Total number of unique accessions in input:", len(l))
+    print '%s\t%s\n' % ("Total number of clusters found:", c)
+
 
 # program execution
 if __name__ == '__main__':
     arguments = docopt(__doc__, version='ClusterScan 0.1.0')
     # print arguments
     main()
+    print("--- %s seconds ---" % (time.time() - start_time))

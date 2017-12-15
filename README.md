@@ -11,9 +11,9 @@ ClusterScan is composed by two different algorithms that perform the search but 
 ## Dependencies:
 ClusterScan requires [Python](https://www.python.org/downloads/release/python-2714/) (v2.7.x). [Bedtools](https://github.com/arq5x/bedtools2) (v2.25.0+) and [R](https://www.r-project.org/) (v3.0.0+) are needed to be in the user path. It also need some other Python libraries which can be easily installed via [pip](https://pip.pypa.io/en/stable/installing/) from [PyPI](https://pypi.python.org/pypi):
 
-- [pybedtools](https://daler.github.io/pybedtools/)
-- [pandas](https://pandas.pydata.org/)
-- [rpy2](https://rpy2.readthedocs.io/en/version_2.8.x/)
+- [pandas](https://pandas.pydata.org/) (v0.19.1)
+- [pybedtools](https://daler.github.io/pybedtools/) (v0.7.8)
+- [rpy2](https://rpy2.readthedocs.io/en/version_2.8.x/) (2.8.3)
 
 Finally, in order to draw high quality clusters distributions for features in the top 10 clusters found (by number of features), it is also required to install the R library [ggplot2](http://ggplot2.org/) (v2.0.0+). ClusterScan is tested on [Ubuntu](https://www.ubuntu.com/) (v14.04LTS+)
 
