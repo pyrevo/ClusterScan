@@ -129,6 +129,12 @@ def main():
         l = list(pdtable.ACC.unique())
     else:
         l = arguments['--category'].split(',')
+    # test the argument
+    if set(l) <= set(list(pdtable.ACC.unique())):
+        pass
+    else:
+        raise SystemExit('Some categories passed through the -c parameter are not present in the input files. Please, check your list and run the analysis again.')
+
     # inizialize empty table to be filled with clusters
     table = pd.DataFrame()
 
@@ -143,6 +149,12 @@ def main():
 
         table = do_clustermean(l, pdtable, table, arguments)
 
+    if table.empty:
+        print "ClusterScan didn't found any cluster!"
+        exit()
+    else:
+        pass
+
     # generate cluster table and filter it
     table.columns = ["chr", "start", "end", "n_features", "ACC"]
     table = table.sort_values(["ACC", "chr"], ascending=[True, True])
@@ -152,10 +164,6 @@ def main():
     table['ID'] = ["C"+str(i) for i in range(1, len(table) + 1)]
     # get the total number of clusters
     c = table.shape[0]
-
-    if table.empty:
-        print "ClusterScan didn't found any cluster!"
-        exit()
 
     # generate output of clusters in BED format
     bed = table.copy()
