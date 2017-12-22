@@ -6,8 +6,8 @@
   ClusterScan, search for clusters of features in a given annotation.
 
 Usage:
-  clusterscan.py clusterdist FEATURES ANNOTATION [-o PATH] [-a NAME] [--info FILE] [-n=<n>] [-d=<bp>]
-  clusterscan.py clustermean FEATURES ANNOTATION [-o PATH] [-a NAME] [--info FILE] [-n=<n>] [-w=<bp>] [-s=<bp>] [-k=<n>] [-e=<n>]
+  clusterscan.py clusterdist FEATURES ANNOTATION [-o PATH] [-a NAME] [-c LIST] [--info FILE] [-n=<n>] [-d=<bp>]
+  clusterscan.py clustermean FEATURES ANNOTATION [-o PATH] [-a NAME] [-c LIST] [--info FILE] [-n=<n>] [-w=<bp>] [-s=<bp>] [-k=<n>] [-e=<n>]
   clusterscan.py (-h | --help)
   clusterscan.py --version
 
@@ -21,6 +21,7 @@ Options:
   -s, --slide=<bp>                  Sliding size [default: 250000].
   -k, --seed=<n>                    Number of standard deviations to identify a window which serves as the beginning of the cluster [default: 3].
   -e, --extension=<n>               Number of standard deviations to identify the window(s) which serve to extend the cluster [default: 2].
+  -c, --category LIST               Comma separated list of one or more specific categories to be analyzed [e.g. PF00001,PF00002].
   --info FILE                       Specify optional file to describe accessions.
   --version                         Show program version.
 """
@@ -124,7 +125,10 @@ def main():
     pdtable = pdtable[pdtable['ACC'] != "Unknown"]
 
     # list unique accessions
-    l = list(pdtable.ACC.unique())
+    if arguments['--category'] is None:
+        l = list(pdtable.ACC.unique())
+    else:
+        l = arguments['--category'].split(',')
     # inizialize empty table to be filled with clusters
     table = pd.DataFrame()
 
@@ -172,10 +176,10 @@ def main():
     bystanders = features[features[6] != features[11]]
 
     # comment if you want to search for bystanders using only 1 accession
-    if len(l) == 1:
-        bystanders = pd.DataFrame()
-    else:
-        pass
+    #if len(l) == 1:
+    #    bystanders = pd.DataFrame()
+    #else:
+    #    pass
 
     # control for bystander = 0 (when program run with 1 accession)
     if bystanders.empty:
@@ -263,7 +267,7 @@ def main():
 
 # program execution
 if __name__ == '__main__':
-    arguments = docopt(__doc__, version='ClusterScan 0.1.0')
-    # print arguments
+    arguments = docopt(__doc__, version='ClusterScan 0.2.1')
+    print arguments
     main()
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print "--- %s seconds ---" % (int(round(time.time() - start_time, 0)))
