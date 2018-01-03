@@ -72,9 +72,9 @@ def seed_extender(new_list, indexes, intersection, limit):
 '''
 
 
-def do_clusterdist(accList, pdTbl, tbl, sargs):
-    for ACC in accList:
-        df = pdTbl[pdTbl.ACC == ACC]
+def do_clusterdist(catList, pdTbl, tbl, sargs):
+    for category in catList:
+        df = pdTbl[pdTbl.category == category]
         BEDtools_object = pybedtools.BedTool().from_dataframe(df).sort()
 
         try:
@@ -83,13 +83,13 @@ def do_clusterdist(accList, pdTbl, tbl, sargs):
             continue
 
         df = pd.read_table(merge.fn, header=None)
-        df[4] = ACC
+        df[4] = category
         tbl = tbl.append(df)
 
     return tbl
 
 
-def do_clustermean(accList, pdTbl, tbl, sargs):
+def do_clustermean(catList, pdTbl, tbl, sargs):
     loc = list(pdTbl.chr.unique())
     chr_len = []
 
@@ -101,10 +101,10 @@ def do_clustermean(accList, pdTbl, tbl, sargs):
     window_maker(windows, chr_len, int(sargs['--window']), int(sargs['--slide']))
     win_bed = pybedtools.BedTool(windows)
 
-    # for each accession compute clusters
-    for ACC in accList:
-        # print ACC
-        df = pdTbl[pdTbl.ACC == ACC]
+    # for each category compute clusters
+    for category in catList:
+        # print category
+        df = pdTbl[pdTbl.category == category]
         BEDtools_object = pybedtools.BedTool().from_dataframe(df)
 
         # intersect features to windows
@@ -114,7 +114,7 @@ def do_clustermean(accList, pdTbl, tbl, sargs):
             continue
 
         df = pd.read_table(intersect_bed.fn, header=None, dtype={0: str})
-        df[4] = ACC
+        df[4] = category
 
         # compute mean and stdv feature density per-window
         mean = df[3].mean()
@@ -155,10 +155,30 @@ def do_clustermean(accList, pdTbl, tbl, sargs):
         final_clusters = clusters.intersect(BEDtools_object, c=True)
 
         tclusters = pd.read_table(final_clusters.fn, header=None)
-        tclusters[4] = ACC
+        tclusters[4] = category
         tbl = tbl.append(tclusters)
 
     return tbl
+
+
+def do_singletons(catList, pdTbl, clustersTbl, emptyTbl, sargs):
+    for category in catList:
+        try:
+            df = pdTbl[pdTbl.category == category]
+            df2 = clustersTbl[clustersTbl.category == category]
+
+            ft = pybedtools.BedTool().from_dataframe(df).sort()
+            cl = pybedtools.BedTool().from_dataframe(df2).sort()
+
+            st = ft.intersect(cl, v=True)
+
+            pdSt = pd.read_table(st.fn, header=None)
+            emptyTbl = emptyTbl.append(pdSt)
+        except Exception as e:
+            continue
+
+    return emptyTbl
+
 
 '''
         #extended_seed = []
@@ -173,7 +193,7 @@ def do_clustermean(accList, pdTbl, tbl, sargs):
             #final_clusters = pybedtools.BedTool(final_list)
             #final_clusters = final_clusters.intersect(BEDtools_object, c=True)  
             #final_clusters = pd.read_table(final_clusters.fn, header=None)
-            #final_clusters[5] = ACC
+            #final_clusters[5] = category
             #tbl = tbl.append(final_clusters)
         #except Exception as e:
             #pass

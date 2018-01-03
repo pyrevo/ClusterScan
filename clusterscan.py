@@ -6,8 +6,8 @@
   ClusterScan, search for clusters of features in a given annotation.
 
 Usage:
-  clusterscan.py clusterdist FEATURES ANNOTATION [-o PATH] [-a NAME] [-c LIST] [--info FILE] [-n=<n>] [-d=<bp>]
-  clusterscan.py clustermean FEATURES ANNOTATION [-o PATH] [-a NAME] [-c LIST] [--info FILE] [-n=<n>] [-w=<bp>] [-s=<bp>] [-k=<n>] [-e=<n>]
+  clusterscan.py clusterdist FEATURES ANNOTATION [-o PATH] [-a NAME] [-c LIST] [--info FILE] [--singletons] [-n=<n>] [-d=<bp>]
+  clusterscan.py clustermean FEATURES ANNOTATION [-o PATH] [-a NAME] [-c LIST] [--info FILE] [--singletons] [-n=<n>] [-w=<bp>] [-s=<bp>] [-k=<n>] [-e=<n>]
   clusterscan.py (-h | --help)
   clusterscan.py --version
 
@@ -22,7 +22,8 @@ Options:
   -k, --seed=<n>                    Number of standard deviations to identify a window which serves as the beginning of the cluster [default: 3].
   -e, --extension=<n>               Number of standard deviations to identify the window(s) which serve to extend the cluster [default: 2].
   -c, --category LIST               Comma separated list of one or more specific categories to be analyzed [e.g. PF00001,PF00002].
-  --info FILE                       Specify optional file to describe accessions.
+  --info FILE                       Specify optional file to describe categories.
+  --singletons                      Identify singletons after clusters and bystanders annotation.
   --version                         Show program version.
 """
 
@@ -45,6 +46,7 @@ with warnings.catch_warnings():
 
 start_time = time.time()
 
+
 def input_tester(file_path):
     """Check for the presence of input files."""
     try:
@@ -62,6 +64,7 @@ def options_tester(option, n, string):
     else:
         pass
 
+
 def rpy2_plotter(anno, clusters, name):
     """Plot genes distribution in clusters using ggplot2 from R."""
     pandas2ri.activate()
@@ -70,11 +73,11 @@ def rpy2_plotter(anno, clusters, name):
 
     anno = anno.sort_values(by="n_ft", ascending=False)
     anno = anno.head(n=10)
-    accession = anno["ACC"].tolist()
-    clusters = clusters[clusters["ACC"].isin(accession)]
+    category = anno["category"].tolist()
+    clusters = clusters[clusters["category"].isin(category)]
     clusters = pandas2ri.py2ri(clusters)
 
-    pp = ggplot2.ggplot(clusters) + ggplot2.aes_string(x="n_features") + ggplot2.geom_histogram(binwidth=1) + ggplot2.facet_wrap(robjects.Formula("~ACC"), ncol=5) + ggplot2.labs(x="Number of Features", y="Number of Clusters", title="Clusters distribution")
+    pp = ggplot2.ggplot(clusters) + ggplot2.aes_string(x="n_features") + ggplot2.geom_histogram(binwidth=1) + ggplot2.facet_wrap(robjects.Formula("~category"), ncol=5) + ggplot2.labs(x="Number of Features", y="Number of Clusters", title="Clusters distribution")
 
     grdevices.pdf(file=name, width=11.692, height=8.267)
     rprint(pp)
@@ -109,28 +112,28 @@ def main():
     anno = pd.read_table(arguments['ANNOTATION'], header=None)
 
     feat.columns = ['chr', 'start', 'end', 'name', 'score', 'strand']
-    anno.columns = ['name', 'ACC']
-    # anno['ACC'] = anno['ACC'].fillna("Unknown")
+    anno.columns = ['name', "category"]
+    # anno["category"] = anno["category"].fillna("Unknown")
     n = list(feat.name.unique())
 
-    # pdtable stores genes annotation and corresponding accessions
+    # pdtable stores genes annotation and corresponding categories
     pdtable = pd.merge(feat, anno, on='name', how='outer')
-    pdtable['ACC'] = pdtable['ACC'].fillna("Unknown")
-    pdtable = pdtable[pd.notnull(pdtable['ACC'])]
+    pdtable["category"] = pdtable["category"].fillna("Unknown")
+    pdtable = pdtable[pd.notnull(pdtable["category"])]
     pdtable = pdtable[pd.notnull(pdtable['chr'])]
     pdtable[['start', 'end']] = pdtable[['start', 'end']].astype(int)
-    pdtable = pdtable.drop_duplicates(['name', 'ACC'])
+    pdtable = pdtable.drop_duplicates(['name', "category"])
     # movq print str(pdtable)
     all_features = pdtable
-    pdtable = pdtable[pdtable['ACC'] != "Unknown"]
+    pdtable = pdtable[pdtable["category"] != "Unknown"]
 
-    # list unique accessions
+    # list unique categories
     if arguments['--category'] is None:
-        l = list(pdtable.ACC.unique())
+        l = list(pdtable.category.unique())
     else:
         l = arguments['--category'].split(',')
     # test the argument
-    if set(l) <= set(list(pdtable.ACC.unique())):
+    if set(l) <= set(list(pdtable.category.unique())):
         pass
     else:
         raise SystemExit('Some categories passed through the -c parameter are not present in the input files. Please, check your list and run the analysis again.')
@@ -156,19 +159,20 @@ def main():
         pass
 
     # generate cluster table and filter it
-    table.columns = ["chr", "start", "end", "n_features", "ACC"]
-    table = table.sort_values(["ACC", "chr"], ascending=[True, True])
+    table.columns = ["chr", "start", "end", "n_features", "category"]
+    table = table.sort_values(["category", "chr"], ascending=[True, True])
     table = table[table["n_features"] >= int(arguments['--nf'])]
-    table = table.sort_values(by=["ACC"], ascending=[True])
+    table = table.sort_values(by=["category"], ascending=[True])
     # table['ID'] = range(1, len(table) + 1)
     table['ID'] = ["C"+str(i) for i in range(1, len(table) + 1)]
     # get the total number of clusters
     c = table.shape[0]
 
     # generate output of clusters in BED format
-    bed = table.copy()
-    bed["strand"] = "+"
-    bed = pybedtools.BedTool().from_dataframe(bed[[0, 1, 2, 5, 3, 6, 4]]).sort()
+    bedTbl = table.copy()
+    bedTbl["strand"] = "+"
+    bedTbl = bedTbl[[0, 1, 2, 5, 3, 6, 4]]
+    bed = pybedtools.BedTool().from_dataframe(bedTbl).sort()
 
     # generate table of features by intersect feature with clusters
     all_features_bed = pybedtools.BedTool().from_dataframe(all_features)
@@ -178,33 +182,33 @@ def main():
     cl_features = features[features[6] == features[11]]
     cl_features = cl_features[[0, 1, 2, 3, 4, 5, 12, 11]]
     cl_features.columns = ["chr", "start", "end", "name", "score",
-                           "strand", "cluster_ID", "cluster_ACC"]
+                           "strand", "ID", "category"]
 
     # generate table of bystanders
     bystanders = features[features[6] != features[11]]
 
-    # comment if you want to search for bystanders using only 1 accession
+    # comment if you want to search for bystanders using only 1 category
     #if len(l) == 1:
     #    bystanders = pd.DataFrame()
     #else:
     #    pass
 
-    # control for bystander = 0 (when program run with 1 accession)
+    # control for bystander = 0 (when program run with 1 category)
     if bystanders.empty:
         table = table[[5, 4, 0, 1, 2, 3]]
         table["n_bystanders"] = 0
     else:
         bystanders = bystanders[[0, 1, 2, 3, 4, 5, 12, 11]]
         bystanders.columns = ["chr", "start", "end", "name", "score",
-                              "strand", "cluster_ID", "cluster_ACC"]
-        # prevent bystanders with 2+ different ACC to be counted twice
-        bystanders = bystanders.drop_duplicates(['name', 'cluster_ID'])
-        # prevent features with 2+ different ACC to be bystanders in theyr cluster
+                              "strand", "ID", "category"]
+        # prevent bystanders with 2+ different categories to be counted twice
+        bystanders = bystanders.drop_duplicates(['name', 'ID'])
+        # prevent features with 2+ different categories to be bystanders in theyr clusters
         bs_merge = pd.merge(bystanders, cl_features, how='outer', indicator=True)
         bystanders = bs_merge.ix[bs_merge._merge == 'left_only']
         bystanders = bystanders.drop(bystanders.columns[8], axis=1)
         # count bystanders number
-        bs_count = bystanders.groupby('cluster_ID').count().reset_index()
+        bs_count = bystanders.groupby('ID').count().reset_index()
         bs_count = bs_count[[0, 1]]
         bs_count.columns = ["ID", "n_bystanders"]
         table = table.merge(bs_count, on="ID", how='outer')
@@ -214,26 +218,26 @@ def main():
 
     # generate summary table
     summary = table.drop(table.columns[[0, 2, 3, 4]], axis=1)
-    # calculate total number of clusters per-accession
-    n_clusters = summary.groupby("ACC").count().reset_index()
+    # calculate total number of clusters per-category
+    n_clusters = summary.groupby("category").count().reset_index()
     n_clusters = n_clusters.drop("n_bystanders", axis=1)
-    n_clusters.columns = ["ACC", "n_clusters"]
-    # calculate total number of features and bystanders per-accession
-    n_ft_bs = summary.groupby("ACC").sum().reset_index()
-    n_ft_bs.columns = ["ACC", "n_ft", "n_bs"]
+    n_clusters.columns = ["category", "n_clusters"]
+    # calculate total number of features and bystanders per-category
+    n_ft_bs = summary.groupby("category").sum().reset_index()
+    n_ft_bs.columns = ["category", "n_ft", "n_bs"]
     # calculate maximum number of features and bystander in cluster
-    max_ft_bs = summary.groupby("ACC").max().reset_index()
-    max_ft_bs.columns = ["ACC", "max_ft", "max_bs"]
+    max_ft_bs = summary.groupby("category").max().reset_index()
+    max_ft_bs.columns = ["category", "max_ft", "max_bs"]
     # calculate minimum number of features and bystander in cluster
-    min_ft_bs = summary.groupby("ACC").min().reset_index()
-    min_ft_bs.columns = ["ACC", "min_ft", "min_bs"]
-    # add accession description if an info file is provided
+    min_ft_bs = summary.groupby("category").min().reset_index()
+    min_ft_bs.columns = ["category", "min_ft", "min_bs"]
+    # add category description if an info file is provided
     if arguments['--info'] is None:
-        summary = n_clusters.merge(n_ft_bs, on='ACC').merge(max_ft_bs, on='ACC').merge(min_ft_bs, on='ACC')
+        summary = n_clusters.merge(n_ft_bs, on="category").merge(max_ft_bs, on="category").merge(min_ft_bs, on="category")
     else:
         desc = pd.read_table(arguments['--info'], header=None)
-        desc.columns = ["ACC", "DESC"]
-        summary = n_clusters.merge(n_ft_bs, on='ACC').merge(max_ft_bs, on='ACC').merge(min_ft_bs, on='ACC').merge(desc, on='ACC')
+        desc.columns = ["category", "DESC"]
+        summary = n_clusters.merge(n_ft_bs, on="category").merge(max_ft_bs, on="category").merge(min_ft_bs, on="category").merge(desc, on="category")
 
     # assign file names and save tables as result
     if not os.path.exists(arguments['--output']):
@@ -261,21 +265,39 @@ def main():
     summary.to_csv(summ_name, sep='\t', header=True, index=False)
 
     if arguments['--analysis'] is None:
-        bed.saveas(bed_name, trackline='track name="%s" description="chr start end ID n_features strand ACC"' % (arguments['FEATURES']))
+        bed.saveas(bed_name, trackline='track name="%s" description="chr start end ID n_features strand category"' % (arguments['FEATURES']))
     else:
-        bed.saveas(bed_name, trackline='track name="%s" description="chr start end ID n_features strand ACC"' % (arguments['--analysis']))
+        bed.saveas(bed_name, trackline='track name="%s" description="chr start end ID n_features strand category"' % (arguments['--analysis']))
 
     # plot a duistribution for top 10 clusters (per n of features)
     rpy2_plotter(summary, table, plot_name)
 
-    print '\n%s\t%s' % ("Total number of unique features in input:", len(n))
-    print '%s\t%s' % ("Total number of unique accessions in input:", len(l))
+    if arguments['--singletons'] is True:
+        print "Singletons identification has been launched..."
+        singletons = pd.DataFrame()
+        singletons = do_singletons(l, pdtable, bedTbl, singletons, arguments)
+        if singletons.empty:
+            print "ClusterScan didn't found any singleton!"
+        else:
+            if arguments['--analysis'] is None:
+                st_name = os.path.join(arguments['--output'], 'singletons.csv')
+            else:
+                st_name = os.path.join(arguments['--output'], arguments['--analysis']+'_singletons.csv')
+
+            singletons.columns = ["chr", "start", "end", "name", "score",
+                              "strand", "category"]
+            singletons.to_csv(st_name, sep='\t', header=True, index=False)
+    else:
+        pass
+
+    print '\n%s\t%s' % ("Total number of unique features scanned:", len(n))
+    print '%s\t%s' % ("Total number of unique categories scanned:", len(l))
     print '%s\t%s\n' % ("Total number of clusters found:", c)
 
 
 # program execution
 if __name__ == '__main__':
     arguments = docopt(__doc__, version='ClusterScan 0.2.1')
-    print arguments
+    #print arguments
     main()
     print "--- %s seconds ---" % (int(round(time.time() - start_time, 0)))
