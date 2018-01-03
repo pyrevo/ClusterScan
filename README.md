@@ -17,6 +17,11 @@ ClusterScan requires [Python](https://www.python.org/downloads/release/python-27
 
 Finally, in order to draw high quality clusters distributions for features in the top 10 clusters found (by number of features), it is also required to install the R library [ggplot2](http://ggplot2.org/) (v2.0.0+). ClusterScan is tested on [Ubuntu](https://www.ubuntu.com/) (v14.04LTS+)
 
+The program is distributed with a file named _setup.py_ that can be found in the main directory. This can be used to automatically install the python dependencies typyng:
+```
+python setup.py install
+```
+
 ## Options:
 ClusterScan provides different parameters in order to finely tune the cluster search. Some of them are algorithm-specific whereas other are in common between clusterdist and clustermean:
 
@@ -46,7 +51,7 @@ python clusterscan.py clusterdist my_genes.bed my_categories.txt -d 250000 -a an
 
 An example of execution with clustermean:
 ```
-python clusterscan.py clusterdist my_genes.bed my_categories.txt --info my_descriptions.txt -w 10000 -s 5000
+python clusterscan.py clustermean my_genes.bed my_categories.txt --info my_descriptions.txt -w 10000 -s 5000
 ```
 
 ## Input/Output:
