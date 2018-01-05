@@ -1,0 +1,1011 @@
+category	n_clusters	n_ft	n_bs	max_ft	max_bs	min_ft	min_bs	description
+PF00001	42	112	87	8	17	2	0	7 transmembrane receptor (rhodopsin family)
+PF00002	6	16	14	4	9	2	0	7 transmembrane receptor (Secretin family)
+PF00003	2	4	0	2	0	2	0	7 transmembrane sweet-taste receptor of 3 GCPR
+PF00004	2	5	3	3	3	2	0	ATPase family associated with various cellular activities (AAA)
+PF00005	9	22	21	5	9	2	0	ABC transporter
+PF00007	1	8	3	8	3	8	3	Cystine-knot domain
+PF00008	6	13	11	3	6	2	0	EGF-like domain
+PF00010	9	18	13	2	6	2	0	Helix-loop-helix DNA-binding domain
+PF00011	1	3	1	3	1	3	1	Hsp20/alpha crystallin family
+PF00012	1	3	0	3	0	3	0	Hsp70 protein
+PF00013	1	2	2	2	2	2	2	KH domain
+PF00014	2	8	7	6	5	2	2	Kunitz/Bovine pancreatic trypsin inhibitor domain
+PF00017	10	21	26	3	13	2	0	SH2 domain
+PF00018	7	14	19	2	6	2	0	SH3 domain
+PF00019	5	11	22	3	14	2	0	Transforming growth factor beta like domain
+PF00020	3	9	3	4	2	2	0	TNFR/NGFR cysteine-rich region
+PF00021	2	14	20	8	13	6	7	u-PAR/Ly-6 domain
+PF00022	2	5	11	3	11	2	0	Actin
+PF00023	3	6	1	2	1	2	0	Ankyrin repeat
+PF00024	1	2	1	2	1	2	1	PAN domain
+PF00025	3	9	5	4	2	2	1	ADP-ribosylation factor family
+PF00026	2	5	1	3	1	2	0	Eukaryotic aspartyl protease
+PF00027	2	4	2	2	1	2	1	Cyclic nucleotide-binding domain
+PF00028	4	66	11	55	11	2	0	Cadherin domain
+PF00029	4	11	2	4	1	2	0	Connexin
+PF00030	3	8	0	4	0	2	0	Beta/Gamma crystallin
+PF00031	2	13	1	9	1	4	0	Cystatin domain
+PF00036	2	4	7	2	5	2	2	EF hand
+PF00038	4	60	38	29	36	2	0	Intermediate filament protein
+PF00040	2	5	1	3	1	2	0	Fibronectin type II domain
+PF00041	14	30	43	3	21	2	0	Fibronectin type III domain
+PF00042	2	10	18	5	18	5	0	Globin
+PF00043	1	4	2	4	2	4	2	Glutathione S-transferase, C-terminal domain
+PF00045	2	10	2	8	2	2	0	Hemopexin
+PF00046	24	86	21	13	5	2	0	Homeobox domain
+PF00047	10	30	43	10	12	2	0	Immunoglobulin domain
+PF00048	8	39	6	11	3	2	0	Small cytokines (intecrine/chemokine), interleukin-8 like
+PF00049	2	6	1	3	1	3	0	Insulin/IGF/Relaxin family
+PF00050	1	7	3	7	3	7	3	Kazal-type serine protease inhibitor domain
+PF00051	1	2	0	2	0	2	0	Kringle domain
+PF00052	1	2	0	2	0	2	0	Laminin B (Domain IV)
+PF00053	3	6	15	2	14	2	0	Laminin EGF domain
+PF00055	1	2	1	2	1	2	1	Laminin N-terminal (Domain VI)
+PF00056	1	4	1	4	1	4	1	lactate/malate dehydrogenase, NAD binding domain
+PF00057	3	6	1	2	1	2	0	Low-density lipoprotein receptor domain class A
+PF00059	13	57	27	20	15	2	0	Lectin C-type domain
+PF00061	5	23	14	8	11	2	0	Lipocalin / cytosolic fatty-acid binding protein family
+PF00062	1	2	1	2	1	2	1	C-type lysozyme/alpha-lactalbumin family
+PF00063	3	10	1	6	1	2	0	Myosin head (motor domain)
+PF00067	9	36	11	6	5	2	0	Cytochrome P450
+PF00068	2	8	1	6	1	2	0	Phospholipase A2
+PF00069	51	120	375	4	31	2	0	Protein kinase domain
+PF00071	11	23	66	3	11	2	1	Ras family
+PF00074	1	16	6	16	6	16	6	Pancreatic ribonuclease
+PF00075	1	2	0	2	0	2	0	RNase H
+PF00076	28	66	131	6	27	2	0	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+PF00079	5	28	2	11	2	2	0	Serpin (serine protease inhibitor)
+PF00083	9	20	3	4	1	2	0	Sugar (and other) transporter
+PF00084	6	25	6	8	3	2	0	Sushi repeat (SCR repeat)
+PF00085	1	2	0	2	0	2	0	Thioredoxin
+PF00086	2	4	0	2	0	2	0	Thyroglobulin type-1 repeat
+PF00087	1	2	0	2	0	2	0	Snake toxin
+PF00088	2	5	3	3	3	2	0	Trefoil (P-type) domain
+PF00089	23	83	44	16	10	2	0	Trypsin
+PF00090	6	12	8	2	4	2	0	Thrombospondin type 1 domain
+PF00091	5	11	4	3	1	2	0	Tubulin/FtsZ family, GTPase domain
+PF00092	6	15	3	3	1	2	0	von Willebrand factor type A domain
+PF00093	1	2	0	2	0	2	0	von Willebrand factor type C domain
+PF00094	1	3	0	3	0	3	0	von Willebrand factor type D domain
+PF00095	1	10	17	10	17	10	17	WAP-type (Whey Acidic Protein) 'four-disulfide core'
+PF00096	57	419	274	64	52	2	0	Zinc finger, C2H2 type
+PF00097	2	5	4	3	3	2	1	Zinc finger, C3HC4 type (RING finger)
+PF00098	1	3	1	3	1	3	1	Zinc knuckle
+PF00100	3	6	6	2	4	2	0	Zona pellucida-like domain
+PF00102	2	4	0	2	0	2	0	Protein-tyrosine phosphatase
+PF00103	1	5	0	5	0	5	0	Somatotropin hormone family
+PF00104	3	7	7	3	6	2	0	Ligand-binding domain of nuclear hormone receptor
+PF00105	3	7	7	3	6	2	0	Zinc finger, C4 type (two domains)
+PF00106	6	16	32	4	27	2	0	short chain dehydrogenase
+PF00107	2	9	1	7	1	2	0	Zinc-binding dehydrogenase
+PF00110	4	8	0	2	0	2	0	wnt family
+PF00111	1	2	2	2	2	2	2	2Fe-2S iron-sulfur cluster binding domain
+PF00112	1	2	0	2	0	2	0	Papain family cysteine protease
+PF00122	2	4	1	2	1	2	0	E1-E2 ATPase
+PF00125	6	52	27	22	18	2	0	Core histone H2A/H2B/H3/H4
+PF00128	1	5	1	5	1	5	1	Alpha amylase, catalytic domain
+PF00129	3	13	0	6	0	3	0	Class I Histocompatibility antigen, domains alpha 1 and 2
+PF00130	1	2	4	2	4	2	4	Phorbol esters/diacylglycerol binding domain (C1 domain)
+PF00131	1	11	1	11	1	11	1	Metallothionein
+PF00134	1	2	0	2	0	2	0	Cyclin, N-terminal domain
+PF00135	2	5	0	3	0	2	0	Carboxylesterase family
+PF00136	1	2	1	2	1	2	1	DNA polymerase family B
+PF00143	1	16	1	16	1	16	1	Interferon alpha/beta domain
+PF00147	3	7	1	3	1	2	0	Fibrinogen beta and gamma chains, C-terminal globular domain
+PF00151	1	3	0	3	0	3	0	Lipase
+PF00153	5	10	2	2	1	2	0	Mitochondrial carrier protein
+PF00155	1	2	0	2	0	2	0	Aminotransferase class I and II
+PF00159	1	2	0	2	0	2	0	Pancreatic hormone peptide
+PF00160	1	2	1	2	1	2	1	Cyclophilin type peptidyl-prolyl cis-trans isomerase/CLD
+PF00166	1	2	2	2	2	2	2	Chaperonin 10 Kd subunit
+PF00167	3	7	0	3	0	2	0	Fibroblast growth factor
+PF00168	8	19	18	5	4	2	0	C2 domain
+PF00169	15	31	75	3	18	2	0	PH domain
+PF00170	3	7	2	3	1	2	0	bZIP transcription factor
+PF00171	3	6	3	2	1	2	1	Aldehyde dehydrogenase family
+PF00173	1	3	1	3	1	3	1	Cytochrome b5-like Heme/Steroid binding domain
+PF00175	1	2	0	2	0	2	0	Oxidoreductase NAD-binding domain
+PF00176	2	4	2	2	1	2	1	SNF2 family N-terminal domain
+PF00178	5	10	1	2	1	2	0	Ets-domain
+PF00179	4	8	3	2	1	2	0	Ubiquitin-conjugating enzyme
+PF00184	1	2	0	2	0	2	0	Neurohypophysial hormones, C-terminal Domain
+PF00188	4	10	5	3	2	2	0	Cysteine-rich secretory protein family
+PF00193	4	8	0	2	0	2	0	Extracellular link domain
+PF00194	1	4	0	4	0	4	0	Eukaryotic-type carbonic anhydrase
+PF00200	3	8	1	4	1	2	0	Disintegrin
+PF00201	3	21	0	10	0	2	0	UDP-glucoronosyl and UDP-glucosyl transferase
+PF00206	1	2	1	2	1	2	1	Lyase
+PF00207	2	5	5	3	3	2	2	Alpha-2-macroglobulin family
+PF00209	3	7	2	3	2	2	0	Sodium:neurotransmitter symporter family
+PF00211	1	2	0	2	0	2	0	Adenylate and Guanylate cyclase catalytic domain
+PF00212	1	2	0	2	0	2	0	Atrial natriuretic peptide
+PF00213	1	2	3	2	3	2	3	ATP synthase delta (OSCP) subunit
+PF00214	1	2	0	2	0	2	0	Calcitonin / CGRP / IAPP family
+PF00217	1	2	2	2	2	2	2	ATP:guanido phosphotransferase, C-terminal catalytic domain
+PF00219	2	4	0	2	0	2	0	Insulin-like growth factor binding protein
+PF00220	1	2	0	2	0	2	0	Neurohypophysial hormones, N-terminal Domain
+PF00225	1	2	4	2	4	2	4	Kinesin motor domain
+PF00226	2	4	4	2	3	2	1	DnaJ domain
+PF00227	5	10	6	2	2	2	0	Proteasome subunit
+PF00229	4	11	0	3	0	2	0	TNF(Tumour Necrosis Factor) family
+PF00230	4	9	3	3	2	2	0	Major intrinsic protein
+PF00237	1	2	1	2	1	2	1	Ribosomal protein L22p/L17e
+PF00240	2	4	3	2	2	2	1	Ubiquitin family
+PF00241	1	2	1	2	1	2	1	Cofilin/tropomyosin-type actin-binding protein
+PF00245	1	3	0	3	0	3	0	Alkaline phosphatase
+PF00246	3	8	0	4	0	2	0	Zinc carboxypeptidase
+PF00248	3	10	0	5	0	2	0	Aldo/keto reductase family
+PF00250	4	10	2	3	1	2	0	Forkhead domain
+PF00255	1	2	0	2	0	2	0	Glutathione peroxidase
+PF00258	1	2	0	2	0	2	0	Flavodoxin
+PF00266	1	2	3	2	3	2	3	Aminotransferase class-V
+PF00270	5	12	50	3	47	2	0	DEAD/DEAH box helicase
+PF00271	9	21	72	3	47	2	0	Helicase conserved C-terminal domain
+PF00273	1	3	0	3	0	3	0	Serum albumin family
+PF00277	1	4	0	4	0	4	0	Serum amyloid A protein
+PF00291	1	2	0	2	0	2	0	Pyridoxal-phosphate dependent enzyme
+PF00293	3	6	3	2	1	2	1	NUDIX domain
+PF00305	1	3	0	3	0	3	0	Lipoxygenase
+PF00307	5	10	13	2	7	2	1	Calponin homology (CH) domain
+PF00316	1	2	0	2	0	2	0	Fructose-1-6-bisphosphatase, N-terminal domain
+PF00319	1	2	1	2	1	2	1	SRF-type transcription factor (DNA-binding and dimerisation domain)
+PF00323	1	6	0	6	0	6	0	Mammalian defensin
+PF00326	1	2	1	2	1	2	1	Prolyl oligopeptidase family
+PF00327	1	3	7	3	7	3	7	Ribosomal protein L30p/L7e
+PF00334	1	3	0	3	0	3	0	Nucleoside diphosphate kinase
+PF00335	4	8	13	2	10	2	1	Tetraspanin family
+PF00337	3	9	3	4	3	2	0	Galactoside-binding lectin
+PF00340	1	9	0	9	0	9	0	Interleukin-1 / 18
+PF00342	1	2	1	2	1	2	1	Phosphoglucose isomerase
+PF00349	1	2	0	2	0	2	0	Hexokinase
+PF00350	1	2	0	2	0	2	0	Dynamin family
+PF00354	1	2	0	2	0	2	0	Pentaxin family
+PF00357	1	3	0	3	0	3	0	Integrin alpha cytoplasmic region
+PF00362	1	2	1	2	1	2	1	Integrin beta chain VWA domain
+PF00366	1	2	2	2	2	2	2	Ribosomal protein S17
+PF00370	1	2	1	2	1	2	1	FGGY family of carbohydrate kinases, N-terminal domain
+PF00373	2	4	0	2	0	2	0	FERM central domain
+PF00377	1	2	0	2	0	2	0	Prion/Doppel alpha-helical domain
+PF00378	2	4	1	2	1	2	0	Enoyl-CoA hydratase/isomerase
+PF00385	3	7	7	3	7	2	0	Chromo (CHRromatin Organisation MOdifier) domain
+PF00386	3	7	4	3	3	2	0	C1q domain
+PF00387	1	2	0	2	0	2	0	Phosphatidylinositol-specific phospholipase C, Y domain
+PF00388	1	2	0	2	0	2	0	Phosphatidylinositol-specific phospholipase C, X domain
+PF00397	1	2	0	2	0	2	0	WW domain
+PF00400	27	59	184	3	24	2	1	WD domain, G-beta repeat
+PF00410	1	2	1	2	1	2	1	Ribosomal protein S8
+PF00412	4	10	8	3	3	2	1	LIM domain
+PF00413	1	9	0	9	0	9	0	Matrixin
+PF00415	1	3	3	3	3	3	3	Regulator of chromosome condensation (RCC1) repeat
+PF00429	1	2	0	2	0	2	0	ENV polyprotein (coat polyprotein)
+PF00431	2	5	4	3	2	2	2	CUB domain
+PF00432	1	2	4	2	4	2	4	Prenyltransferase and squalene oxidase repeat
+PF00433	1	2	2	2	2	2	2	Protein kinase C terminal domain
+PF00435	1	2	7	2	7	2	7	Spectrin repeat
+PF00439	1	3	2	3	2	3	2	Bromodomain
+PF00443	6	30	6	20	6	2	0	Ubiquitin carboxyl-terminal hydrolase
+PF00445	1	2	1	2	1	2	1	Ribonuclease T2 family
+PF00447	2	6	7	4	7	2	0	HSF-type DNA-binding
+PF00452	1	2	3	2	3	2	3	Apoptosis regulator proteins, Bcl-2 family
+PF00454	2	4	3	2	3	2	0	Phosphatidylinositol 3- and 4-kinase
+PF00467	1	2	1	2	1	2	1	KOW motif
+PF00474	1	2	3	2	3	2	3	Sodium:solute symporter family
+PF00481	1	2	1	2	1	2	1	Protein phosphatase 2C
+PF00487	1	3	1	3	1	3	1	Fatty acid desaturase
+PF00488	2	4	3	2	2	2	1	MutS domain V
+PF00498	1	2	16	2	16	2	16	FHA domain
+PF00501	2	7	3	5	2	2	1	AMP-binding enzyme
+PF00503	5	10	3	2	1	2	0	G-protein alpha subunit
+PF00505	1	2	1	2	1	2	1	HMG (high mobility group) box
+PF00514	2	4	3	2	2	2	1	Armadillo/beta-catenin-like repeat
+PF00520	12	30	41	4	17	2	0	Ion transport protein
+PF00530	2	4	0	2	0	2	0	Scavenger receptor cysteine-rich domain
+PF00531	1	2	3	2	3	2	3	Death domain
+PF00535	3	6	1	2	1	2	0	Glycosyl transferase family 2
+PF00536	6	12	12	2	4	2	0	SAM domain (Sterile alpha motif)
+PF00538	2	7	26	5	22	2	4	linker histone H1 and H5 family
+PF00542	1	2	1	2	1	2	1	Ribosomal protein L7/L12 C-terminal domain
+PF00557	1	2	1	2	1	2	1	Metallopeptidase family M24
+PF00561	2	7	48	5	39	2	9	alpha/beta hydrolase fold
+PF00566	5	17	6	6	2	2	0	Rab-GTPase-TBC domain
+PF00571	2	4	2	2	1	2	1	CBS domain
+PF00581	1	2	0	2	0	2	0	Rhodanese-like domain
+PF00587	1	2	2	2	2	2	2	tRNA synthetase class II core domain (G, H, P, S and T)
+PF00594	2	5	10	3	10	2	0	Vitamin K-dependent carboxylation/gamma-carboxyglutamic (GLA) domain
+PF00595	10	23	35	3	15	2	1	PDZ domain (Also known as DHR or GLGF)
+PF00612	3	9	2	5	1	2	0	IQ calmodulin-binding motif
+PF00615	8	20	12	5	4	2	0	Regulator of G protein signaling domain
+PF00616	1	2	4	2	4	2	4	GTPase-activator protein for Ras-like GTPase
+PF00617	1	2	1	2	1	2	1	RasGEF domain
+PF00618	1	2	1	2	1	2	1	RasGEF N-terminal motif
+PF00619	2	8	0	6	0	2	0	Caspase recruitment domain
+PF00620	4	8	4	2	1	2	1	RhoGAP domain
+PF00621	3	6	3	2	1	2	1	RhoGEF domain
+PF00622	12	41	59	7	35	2	0	SPRY domain
+PF00625	2	4	1	2	1	2	0	Guanylate kinase
+PF00626	1	3	1	3	1	3	1	Gelsolin repeat
+PF00628	2	4	44	2	30	2	14	PHD-finger
+PF00631	2	4	2	2	1	2	1	GGL domain
+PF00632	3	7	7	3	4	2	0	HECT-domain (ubiquitin-transferase)
+PF00642	5	10	9	2	3	2	0	Zinc finger C-x8-C-x5-C-x3-H type (and similar)
+PF00643	11	32	28	6	10	2	0	B-box zinc finger
+PF00644	1	2	0	2	0	2	0	Poly(ADP-ribose) polymerase catalytic domain
+PF00648	2	4	1	2	1	2	0	Calpain family cysteine protease
+PF00650	1	5	2	5	2	5	2	CRAL/TRIO domain
+PF00651	16	34	76	3	36	2	0	BTB/POZ domain
+PF00652	2	4	1	2	1	2	0	Ricin-type beta-trefoil lectin domain
+PF00653	1	2	0	2	0	2	0	Inhibitor of Apoptosis domain
+PF00654	1	2	1	2	1	2	1	Voltage gated chloride channel
+PF00656	2	6	0	3	0	3	0	Caspase domain
+PF00664	4	9	5	3	3	2	0	ABC transporter transmembrane region
+PF00667	1	2	0	2	0	2	0	FAD binding domain
+PF00676	1	2	4	2	4	2	4	Dehydrogenase E1 component
+PF00681	1	2	0	2	0	2	0	Plectin repeat
+PF00685	5	11	2	3	1	2	0	Sulfotransferase domain
+PF00688	2	4	8	2	6	2	2	TGF-beta propeptide
+PF00689	1	2	0	2	0	2	0	Cation transporting ATPase, C-terminus
+PF00690	2	4	1	2	1	2	0	Cation transporter/ATPase, N-terminus
+PF00702	1	2	1	2	1	2	1	haloacid dehalogenase-like hydrolase
+PF00704	2	5	2	3	2	2	0	Glycosyl hydrolases family 18
+PF00711	2	8	14	6	10	2	4	Beta defensin
+PF00726	1	3	0	3	0	3	0	Interleukin 10
+PF00728	1	2	2	2	2	2	2	Glycosyl hydrolase family 20, catalytic domain
+PF00743	1	4	0	4	0	4	0	Flavin-binding monooxygenase-like
+PF00751	1	3	0	3	0	3	0	DM DNA binding domain
+PF00752	1	2	1	2	1	2	1	XPG N-terminal domain
+PF00777	3	6	0	2	0	2	0	Glycosyltransferase family 29 (sialyltransferase)
+PF00779	1	3	3	3	3	3	3	BTK motif
+PF00780	1	2	1	2	1	2	1	CNH domain
+PF00782	1	2	1	2	1	2	1	Dual specificity phosphatase, catalytic domain
+PF00786	1	2	1	2	1	2	1	P21-Rho-binding domain
+PF00787	3	6	4	2	2	2	1	PX domain
+PF00788	1	2	1	2	1	2	1	Ras association (RalGDS/AF-6) domain
+PF00795	1	3	0	3	0	3	0	Carbon-nitrogen hydrolase
+PF00797	1	2	0	2	0	2	0	N-acetyltransferase
+PF00804	2	4	1	2	1	2	0	Syntaxin
+PF00812	1	4	0	4	0	4	0	Ephrin
+PF00822	8	17	5	3	2	2	0	PMP-22/EMP/MP20/Claudin family
+PF00833	1	2	1	2	1	2	1	Ribosomal S17
+PF00852	1	3	1	3	1	3	1	Glycosyltransferase family 10 (fucosyltransferase) C-term
+PF00855	1	2	1	2	1	2	1	PWWP domain
+PF00858	1	2	0	2	0	2	0	Amiloride-sensitive sodium channel
+PF00864	2	5	6	3	6	2	0	ATP P2X receptor
+PF00867	1	2	1	2	1	2	1	XPG I-region
+PF00868	2	5	2	3	2	2	0	Transglutaminase family
+PF00879	1	6	0	6	0	6	0	Defensin propeptide
+PF00884	2	6	0	4	0	2	0	Sulfatase
+PF00888	1	2	4	2	4	2	4	Cullin family
+PF00891	1	2	2	2	2	2	2	O-methyltransferase
+PF00907	2	4	0	2	0	2	0	T-box
+PF00909	1	2	2	2	2	2	2	Ammonium Transporter Family
+PF00916	1	2	1	2	1	2	1	Sulfate permease family
+PF00927	2	5	2	3	2	2	0	Transglutaminase family, C-terminal ig like domain
+PF00928	1	2	3	2	3	2	3	Adaptor complexes medium subunit family
+PF00929	2	4	3	2	3	2	0	Exonuclease
+PF00930	1	2	1	2	1	2	1	Dipeptidyl peptidase IV (DPP IV) N-terminal region
+PF00935	1	2	2	2	2	2	2	Ribosomal protein L44
+PF00956	3	9	1	5	1	2	0	Nucleosome assembly protein (NAP)
+PF00957	2	4	2	2	1	2	1	Synaptobrevin
+PF00969	1	9	10	9	10	9	10	Class II histocompatibility antigen, beta domain
+PF00989	1	2	0	2	0	2	0	PAS fold
+PF00992	3	6	3	2	1	2	1	Troponin
+PF00993	1	6	14	6	14	6	14	Class II histocompatibility antigen, alpha domain
+PF00995	1	2	2	2	2	2	2	Sec1 family
+PF00999	2	4	2	2	2	2	0	Sodium/hydrogen exchanger family
+PF01007	5	10	5	2	2	2	0	Inward rectifier potassium channel
+PF01017	2	5	1	3	1	2	0	STAT protein, all-alpha domain
+PF01019	1	2	7	2	7	2	7	Gamma-glutamyltranspeptidase
+PF01023	2	24	0	15	0	9	0	S-100/ICaBP type calcium binding domain
+PF01026	1	2	1	2	1	2	1	TatD related DNase
+PF01027	2	4	4	2	3	2	1	Inhibitor of apoptosis-promoting Bax1
+PF01031	1	2	0	2	0	2	0	Dynamin central region
+PF01033	1	2	2	2	2	2	2	Somatomedin B domain
+PF01048	1	2	2	2	2	2	2	Phosphorylase superfamily
+PF01049	2	7	0	5	0	2	0	Cadherin cytoplasmic region
+PF01055	1	2	3	2	3	2	3	Glycosyl hydrolases family 31
+PF01061	1	2	0	2	0	2	0	ABC-2 type transporter
+PF01064	1	2	0	2	0	2	0	Activin types I and II receptor domain
+PF01067	2	4	1	2	1	2	0	Calpain large subunit, domain III
+PF01073	1	2	0	2	0	2	0	3-beta hydroxysteroid dehydrogenase/isomerase family
+PF01074	1	2	3	2	3	2	3	Glycosyl hydrolases family 38 N-terminal domain
+PF01087	1	2	1	2	1	2	1	Galactose-1-phosphate uridyl transferase, N-terminal domain
+PF01094	1	2	0	2	0	2	0	Receptor family ligand binding region
+PF01099	1	6	1	6	1	6	1	Uteroglobin family
+PF01102	1	2	0	2	0	2	0	Glycophorin A
+PF01105	2	4	5	2	4	2	1	emp24/gp25L/p24 family/GOLD
+PF01108	3	10	1	5	1	2	0	Tissue factor
+PF01122	1	2	0	2	0	2	0	Eukaryotic cobalamin-binding protein
+PF01129	1	2	0	2	0	2	0	NAD:arginine ADP-ribosyltransferase
+PF01146	1	2	0	2	0	2	0	Caveolin
+PF01150	2	5	27	3	26	2	1	GDA1/CD39 (nucleoside phosphatase) family
+PF01153	2	4	0	2	0	2	0	Glypican
+PF01179	1	2	0	2	0	2	0	Copper amine oxidase, enzyme domain
+PF01187	1	3	2	3	2	3	2	Macrophage migration inhibitory factor (MIF)
+PF01214	1	2	2	2	2	2	2	Casein kinase II regulatory subunit
+PF01217	1	2	1	2	1	2	1	Clathrin adaptor complex small chain
+PF01223	1	2	2	2	2	2	2	DNA/RNA non-specific endonuclease
+PF01231	1	2	0	2	0	2	0	Indoleamine 2,3-dioxygenase
+PF01234	1	2	3	2	3	2	3	NNMT/PNMT/TEMT family
+PF01244	1	2	1	2	1	2	1	Membrane dipeptidase (Peptidase family M19)
+PF01248	1	2	1	2	1	2	1	Ribosomal protein L7Ae/L30e/S12e/Gadd45 family
+PF01273	2	10	1	8	1	2	0	LBP / BPI / CETP family, N-terminal domain
+PF01284	4	10	1	3	1	2	0	Membrane-associating domain
+PF01290	1	2	2	2	2	2	2	Thymosin beta-4 family
+PF01291	1	2	0	2	0	2	0	LIF / OSM family
+PF01301	1	2	0	2	0	2	0	Glycosyl hydrolases family 35
+PF01302	1	2	4	2	4	2	4	CAP-Gly domain
+PF01335	1	3	0	3	0	3	0	Death effector domain
+PF01342	1	5	0	5	0	5	0	SAND domain
+PF01344	5	11	13	3	7	2	0	Kelch motif
+PF01352	42	362	126	55	26	2	0	KRAB box
+PF01363	1	2	2	2	2	2	2	FYVE zinc finger
+PF01369	2	4	3	2	2	2	1	Sec7 domain
+PF01390	3	9	1	5	1	2	0	SEA domain
+PF01391	15	34	20	3	9	2	0	Collagen triple helix repeat (20 copies)
+PF01399	1	2	11	2	11	2	11	PCI domain
+PF01401	1	2	0	2	0	2	0	Angiotensin-converting enzyme
+PF01403	2	5	6	3	6	2	0	Sema domain
+PF01404	1	2	3	2	3	2	3	Ephrin receptor ligand binding domain
+PF01410	1	2	0	2	0	2	0	Fibrillar collagen C-terminal domain
+PF01411	1	2	1	2	1	2	1	tRNA synthetases class II (A)
+PF01412	1	2	4	2	4	2	4	Putative GTPase activating protein for Arf
+PF01413	3	6	0	2	0	2	0	C-terminal tandem repeated domain in type 4 procollagen
+PF01421	5	13	0	4	0	2	0	Reprolysin (M12B) family zinc metalloprotease
+PF01433	1	3	1	3	1	3	1	Peptidase family M1
+PF01442	1	3	1	3	1	3	1	Apolipoprotein A1/A4/E domain
+PF01454	9	30	11	6	7	2	0	MAGE family
+PF01462	1	3	1	3	1	3	1	Leucine rich repeat N-terminal domain
+PF01463	1	2	0	2	0	2	0	Leucine rich repeat C-terminal domain
+PF01471	1	9	0	9	0	9	0	Putative peptidoglycan binding domain
+PF01477	2	6	0	3	0	3	0	PLAT/LH2 domain
+PF01480	1	2	1	2	1	2	1	PWI domain
+PF01485	1	2	2	2	2	2	2	IBR domain, a half RING-finger domain
+PF01490	2	6	0	3	0	3	0	Transmembrane amino acid transporter protein
+PF01500	1	10	10	10	10	10	10	Keratin, high sulfur B2 protein
+PF01510	1	2	0	2	0	2	0	N-acetylmuramoyl-L-alanine amidase
+PF01529	1	2	1	2	1	2	1	DHHC palmitoyltransferase
+PF01531	1	2	3	2	3	2	3	Glycosyl transferase family 11
+PF01546	2	4	2	2	2	2	0	Peptidase family M20/M25/M40
+PF01554	1	2	1	2	1	2	1	MatE
+PF01556	1	2	1	2	1	2	1	DnaJ C terminal domain
+PF01562	5	13	0	4	0	2	0	Reprolysin family propeptide
+PF01569	1	2	0	2	0	2	0	PAP2 superfamily
+PF01571	1	2	1	2	1	2	1	Aminomethyltransferase folate-binding domain
+PF01576	2	8	0	6	0	2	0	Myosin tail
+PF01582	4	12	1	5	1	2	0	TIR domain
+PF01585	4	8	16	2	12	2	0	G-patch domain
+PF01586	1	2	0	2	0	2	0	Myogenic Basic domain
+PF01593	1	2	0	2	0	2	0	Flavin containing amine oxidoreductase
+PF01624	1	2	2	2	2	2	2	MutS domain I
+PF01630	2	5	3	3	3	2	0	Hyaluronidase
+PF01661	1	3	1	3	1	3	1	Macro domain
+PF01663	2	4	2	2	2	2	0	Type I phosphodiesterase / nucleotide pyrophosphatase
+PF01712	1	2	1	2	1	2	1	Deoxynucleoside kinase
+PF01722	1	2	1	2	1	2	1	BolA-like protein
+PF01729	1	2	1	2	1	2	1	Quinolinate phosphoribosyl transferase, C-terminal domain
+PF01731	1	3	0	3	0	3	0	Arylesterase
+PF01734	1	2	1	2	1	2	1	Patatin-like phospholipase
+PF01735	1	5	3	5	3	5	3	Lysophospholipase catalytic domain
+PF01740	1	2	1	2	1	2	1	STAS domain
+PF01754	1	2	0	2	0	2	0	A20-like zinc finger
+PF01759	1	2	2	2	2	2	2	UNC-6/NTR/C345C module
+PF01770	1	2	0	2	0	2	0	Reduced folate carrier
+PF01794	2	4	2	2	2	2	0	Ferric reductase like transmembrane component
+PF01805	1	2	12	2	12	2	12	Surp module
+PF01812	1	2	1	2	1	2	1	5-formyltetrahydrofolate cyclo-ligase family
+PF01821	1	2	2	2	2	2	2	Anaphylotoxin-like domain
+PF01823	2	4	1	2	1	2	0	MAC/Perforin domain
+PF01825	3	9	9	4	9	2	0	GPCR proteolysis site, GPS, motif
+PF01826	1	3	0	3	0	3	0	Trypsin Inhibitor like cysteine rich domain
+PF01834	1	2	2	2	2	2	2	XRCC1 N terminal domain
+PF01835	2	5	5	3	3	2	2	MG2 domain
+PF01839	2	5	1	3	1	2	0	FG-GAP repeat
+PF01840	1	2	0	2	0	2	0	TCL1/MTCP1 family
+PF01841	2	5	2	3	2	2	0	Transglutaminase-like superfamily
+PF01843	2	4	2	2	1	2	1	DIL domain
+PF01909	1	3	0	3	0	3	0	Nucleotidyltransferase domain
+PF01912	1	2	2	2	2	2	2	eIF-6 family
+PF01922	1	2	3	2	3	2	3	SRP19 protein
+PF01926	1	2	2	2	2	2	2	50S ribosome-binding GTPase
+PF01979	1	2	13	2	13	2	13	Amidohydrolase family
+PF01997	1	2	1	2	1	2	1	Translin family
+PF02008	1	2	0	2	0	2	0	CXXC zinc finger domain
+PF02020	1	2	8	2	8	2	8	eIF4-gamma/eIF5/eIF2-epsilon
+PF02023	8	44	81	12	38	2	0	SCAN domain
+PF02037	3	6	5	2	3	2	0	SAP domain
+PF02038	2	7	2	4	1	3	1	ATP1G1/PLM/MAT8 family
+PF02058	1	2	0	2	0	2	0	Guanylin precursor
+PF02060	1	2	3	2	3	2	3	Slow voltage-gated potassium channel
+PF02089	1	2	3	2	3	2	3	Palmitoyl protein thioesterase
+PF02136	1	2	1	2	1	2	1	Nuclear transport factor 2 (NTF2) domain
+PF02138	1	2	1	2	1	2	1	Beige/BEACH domain
+PF02141	1	2	7	2	7	2	7	DENN (AEX-3) domain
+PF02170	1	3	0	3	0	3	0	PAZ domain
+PF02171	1	3	0	3	0	3	0	Piwi domain
+PF02180	1	2	3	2	3	2	3	Bcl-2 homology region 4
+PF02189	1	3	0	3	0	3	0	Immunoreceptor tyrosine-based activation motif
+PF02198	3	6	0	2	0	2	0	Sterile alpha motif (SAM)/Pointed domain
+PF02207	1	2	2	2	2	2	2	Putative zinc finger in N-recognin (UBR box)
+PF02212	1	2	0	2	0	2	0	Dynamin GTPase effector domain
+PF02214	3	10	10	4	5	2	1	BTB/POZ domain
+PF02225	1	2	1	2	1	2	1	PA domain
+PF02244	2	6	0	4	0	2	0	Carboxypeptidase activation peptide
+PF02251	1	2	2	2	2	2	2	Proteasome activator pa28 alpha subunit
+PF02252	1	2	2	2	2	2	2	Proteasome activator pa28 beta subunit
+PF02263	1	7	0	7	0	7	0	Guanylate-binding protein, N-terminal domain
+PF02267	1	2	1	2	1	2	1	ADP-ribosyl cyclase
+PF02318	1	2	0	2	0	2	0	FYVE-type zinc finger
+PF02373	2	5	0	3	0	2	0	JmjC domain, hydroxylase
+PF02375	2	5	0	3	0	2	0	jmjN domain
+PF02389	1	3	0	3	0	3	0	Cornifin (SPRR) family
+PF02394	1	2	0	2	0	2	0	Interleukin-1 propeptide
+PF02450	1	2	8	2	8	2	8	Lecithin:cholesterol acyltransferase
+PF02487	1	3	2	3	2	3	2	CLN3 protein
+PF02513	1	3	0	3	0	3	0	Spin/Ssty Family
+PF02535	1	2	1	2	1	2	1	ZIP Zinc transporter
+PF02574	1	2	1	2	1	2	1	Homocysteine S-methyltransferase
+PF02578	1	2	1	2	1	2	1	Multi-copper polyphenol oxidoreductase laccase
+PF02686	1	2	3	2	3	2	3	Glu-tRNAGln amidotransferase C subunit
+PF02727	1	2	0	2	0	2	0	Copper amine oxidase, N2 domain
+PF02728	1	2	0	2	0	2	0	Copper amine oxidase, N3 domain
+PF02736	2	8	0	6	0	2	0	Myosin N-terminal SH3-like domain
+PF02749	1	2	1	2	1	2	1	Quinolinate phosphoribosyl transferase, N-terminal domain
+PF02758	4	14	4	6	3	2	0	PAAD/DAPIN/Pyrin domain
+PF02760	1	4	0	4	0	4	0	HIN-200/IF120x domain
+PF02793	1	3	5	3	5	3	5	Hormone receptor domain
+PF02798	2	10	1	5	1	5	0	Glutathione S-transferase, N-terminal domain
+PF02806	1	5	1	5	1	5	1	Alpha amylase, C-terminal all-beta domain
+PF02807	1	2	2	2	2	2	2	ATP:guanido phosphotransferase, N-terminal domain
+PF02809	1	2	7	2	7	2	7	Ubiquitin interaction motif
+PF02818	1	2	1	2	1	2	1	PPAK motif
+PF02828	1	2	1	2	1	2	1	L27 domain
+PF02840	1	2	1	2	1	2	1	Prp18 domain
+PF02841	1	7	0	7	0	7	0	Guanylate-binding protein, C-terminal domain
+PF02864	2	5	1	3	1	2	0	STAT protein, DNA binding domain
+PF02865	2	5	1	3	1	2	0	STAT protein, protein interaction domain
+PF02866	1	4	1	4	1	4	1	lactate/malate dehydrogenase, alpha/beta C-terminal domain
+PF02886	2	7	4	5	3	2	1	LBP / BPI / CETP family, C-terminal domain
+PF02893	1	2	0	2	0	2	0	GRAM domain
+PF02902	1	2	1	2	1	2	1	Ulp1 protease family, C-terminal catalytic domain
+PF02931	10	28	2	4	1	2	0	Neurotransmitter-gated ion-channel ligand binding domain
+PF02932	10	28	2	4	1	2	0	Neurotransmitter-gated ion-channel transmembrane region
+PF02946	1	4	3	4	3	4	3	GTF2I-like repeat
+PF02990	1	3	3	3	3	3	3	Endomembrane protein 70
+PF03002	1	2	1	2	1	2	1	Somatostatin/Cortistatin family
+PF03024	1	3	0	3	0	3	0	Folate receptor family
+PF03031	1	2	3	2	3	2	3	NLI interacting factor-like phosphatase
+PF03036	1	3	9	3	9	3	9	Perilipin family
+PF03045	1	2	1	2	1	2	1	DAN domain
+PF03061	1	2	0	2	0	2	0	Thioesterase superfamily
+PF03068	1	5	1	5	1	5	1	Protein-arginine deiminase (PAD)
+PF03098	3	7	3	3	2	2	0	Animal haem peroxidase
+PF03129	1	2	3	2	3	2	3	Anticodon binding domain
+PF03133	2	4	5	2	3	2	2	Tubulin-tyrosine ligase family
+PF03137	2	9	1	7	1	2	0	Organic Anion Transporter Polypeptide (OATP) family
+PF03151	1	2	1	2	1	2	1	Triose-phosphate Transporter family
+PF03153	1	2	3	2	3	2	3	Transcription factor IIA, alpha/beta subunit
+PF03165	1	2	0	2	0	2	0	MH1 domain
+PF03166	1	2	0	2	0	2	0	MH2 domain
+PF03172	1	5	0	5	0	5	0	HSR domain
+PF03179	1	2	3	2	3	2	3	Vacuolar (H+)-ATPase G subunit
+PF03185	1	3	2	3	2	3	2	Calcium-activated potassium channel, beta subunit
+PF03189	1	2	1	2	1	2	1	Otopetrin
+PF03194	1	2	1	2	1	2	1	LUC7 N_terminus
+PF03208	1	2	0	2	0	2	0	PRA1 family protein
+PF03250	1	2	2	2	2	2	2	Tropomodulin
+PF03253	1	2	0	2	0	2	0	Urea transporter
+PF03256	1	2	4	2	4	2	4	Anaphase-promoting complex, subunit 10 (APC10)
+PF03285	1	2	1	2	1	2	1	Paralemmin
+PF03299	1	2	0	2	0	2	0	Transcription factor AP-2
+PF03311	1	2	1	2	1	2	1	Cornichon protein
+PF03348	1	2	5	2	5	2	5	Serine incorporator (Serinc)
+PF03357	2	4	5	2	3	2	2	Snf7
+PF03359	1	2	1	2	1	2	1	Guanylate-kinase-associated protein (GKAP) protein
+PF03402	1	2	0	2	0	2	0	Vomeronasal organ pheromone receptor family, V1R
+PF03414	1	2	1	2	1	2	1	Glycosyltransferase family 6
+PF03455	1	2	7	2	7	2	7	dDENN domain
+PF03456	1	2	7	2	7	2	7	uDENN domain
+PF03473	1	2	0	2	0	2	0	MOSC domain
+PF03476	1	2	0	2	0	2	0	MOSC N-terminal beta barrel domain
+PF03489	1	2	0	2	0	2	0	Saposin-like type B, region 2
+PF03501	1	2	1	2	1	2	1	Plectin/S10 domain
+PF03567	1	2	0	2	0	2	0	Sulfotransferase family
+PF03587	1	2	2	2	2	2	2	EMG1/NEP1 methyltransferase
+PF03637	1	2	2	2	2	2	2	Mob1/phocein family
+PF03645	1	2	2	2	2	2	2	Tctex-1 family
+PF03647	1	2	2	2	2	2	2	Transmembrane proteins 14C
+PF03656	1	2	3	2	3	2	3	Pam16
+PF03669	1	2	2	2	2	2	2	Uncharacterised protein family (UPF0139)
+PF03727	1	2	0	2	0	2	0	Hexokinase
+PF03765	1	2	4	2	4	2	4	CRAL/TRIO, N-terminal domain
+PF03798	2	4	2	2	1	2	1	TLC domain
+PF03803	1	4	0	4	0	4	0	Scramblase
+PF03807	1	2	1	2	1	2	1	NADP oxidoreductase coenzyme F420-dependent
+PF03810	1	2	3	2	3	2	3	Importin-beta N-terminal domain
+PF03853	1	2	1	2	1	2	1	YjeF-related protein N-terminus
+PF03874	1	2	1	2	1	2	1	RNA polymerase Rpb4
+PF03881	1	2	1	2	1	2	1	Fructosamine kinase
+PF03901	1	2	2	2	2	2	2	Alg9-like mannosyltransferase family
+PF03920	1	2	0	2	0	2	0	Groucho/TLE N-terminal Q-rich domain
+PF03921	1	4	5	4	5	4	5	Intercellular adhesion molecule (ICAM), N-terminal domain
+PF03931	1	2	2	2	2	2	2	Skp1 family, tetramerisation domain
+PF03937	1	2	2	2	2	2	2	Flavinator of succinate dehydrogenase
+PF03943	1	2	1	2	1	2	1	TAP C-terminal domain
+PF03953	4	9	3	3	1	2	0	Tubulin C-terminal domain
+PF03954	1	3	0	3	0	3	0	Hepatic lectin, N-terminal domain
+PF03980	1	2	2	2	2	2	2	Nnf1
+PF03982	2	5	2	3	2	2	0	Diacylglycerol acyltransferase
+PF04003	1	2	1	2	1	2	1	Dip2/Utp12 Family
+PF04032	1	2	1	2	1	2	1	RNAse P Rpr2/Rpp21/SNM1 subunit domain
+PF04081	1	2	2	2	2	2	2	DNA polymerase delta, subunit 4
+PF04083	1	2	0	2	0	2	0	Partial alpha/beta-hydrolase lipase region
+PF04089	1	2	0	2	0	2	0	BRICHOS domain
+PF04103	2	18	0	16	0	2	0	CD20-like family
+PF04106	1	2	1	2	1	2	1	Autophagy protein Apg5
+PF04124	1	3	7	3	7	3	7	Dor1-like family
+PF04144	1	2	4	2	4	2	4	SCAMP family
+PF04145	1	2	2	2	2	2	2	Ctr copper transporter family
+PF04148	1	2	2	2	2	2	2	Transmembrane adaptor Erv26
+PF04180	1	2	2	2	2	2	2	Low temperature viability protein
+PF04201	1	2	1	2	1	2	1	Tumour protein D52 family
+PF04212	1	2	3	2	3	2	3	MIT (microtubule interacting and transport) domain
+PF04300	2	7	4	4	4	3	0	F-box associated region
+PF04326	1	6	0	6	0	6	0	Putative DNA-binding domain
+PF04418	1	2	1	2	1	2	1	Domain of unknown function (DUF543)
+PF04427	1	2	1	2	1	2	1	Brix domain
+PF04434	1	2	0	2	0	2	0	SWIM zinc finger
+PF04438	1	2	1	2	1	2	1	HIT zinc finger
+PF04505	3	8	3	4	2	2	0	Interferon-induced transmembrane protein
+PF04506	1	2	1	2	1	2	1	Rft protein
+PF04538	2	14	2	11	2	3	0	Brain expressed X-linked like family
+PF04548	1	8	0	8	0	8	0	AIG1 family
+PF04579	1	3	0	3	0	3	0	Keratin, high-sulphur matrix protein
+PF04588	1	2	1	2	1	2	1	Hypoxia induced protein conserved region
+PF04598	1	2	2	2	2	2	2	Gasdermin family
+PF04614	1	2	1	2	1	2	1	Pex19 protein family
+PF04732	1	2	0	2	0	2	0	Intermediate filament head (DNA binding) region
+PF04774	1	18	1	18	1	18	1	Hyaluronan / mRNA binding family
+PF04775	1	3	1	3	1	3	1	Acyl-CoA thioester hydrolase/BAAT N-terminal region
+PF04795	1	2	1	2	1	2	1	PAPA-1-like conserved region
+PF04826	2	9	0	5	0	4	0	Armadillo-like
+PF04828	1	3	0	3	0	3	0	Glutathione-dependent formaldehyde-activating enzyme
+PF04831	1	2	0	2	0	2	0	Popeye protein conserved region
+PF04970	1	4	1	4	1	4	1	Lecithin retinol acyltransferase
+PF04988	1	2	0	2	0	2	0	A-kinase anchoring protein 95 (AKAP95)
+PF05008	1	2	2	2	2	2	2	Vesicle transport v-SNARE protein N-terminus
+PF05118	1	2	1	2	1	2	1	Aspartyl/Asparaginyl beta-hydroxylase
+PF05182	1	2	4	2	4	2	4	Fip1 motif
+PF05186	1	2	0	2	0	2	0	Dpy-30 motif
+PF05188	1	2	2	2	2	2	2	MutS domain II
+PF05190	2	4	3	2	2	2	1	MutS family domain IV
+PF05192	2	4	3	2	2	2	1	MutS domain III
+PF05279	1	2	1	2	1	2	1	Aspartyl beta-hydroxylase N-terminal region
+PF05287	2	13	28	11	21	2	7	PMG protein
+PF05292	1	2	1	2	1	2	1	Malonyl-CoA decarboxylase (MCD)
+PF05296	3	22	17	14	7	4	5	Taste receptor protein (TAS2R)
+PF05324	1	2	10	2	10	2	10	Sperm antigen HE2
+PF05328	1	2	4	2	4	2	4	CybS, succinate dehydrogenase cytochrome B small subunit
+PF05347	1	2	1	2	1	2	1	Complex 1 protein (LYR family)
+PF05350	1	2	0	2	0	2	0	Glycogen synthase kinase-3 binding
+PF05355	1	2	1	2	1	2	1	Apolipoprotein C-II
+PF05399	1	2	2	2	2	2	2	Ectropic viral integration site 2A protein (EVI2A)
+PF05461	1	6	1	6	1	6	1	Apolipoprotein L
+PF05470	1	2	11	2	11	2	11	Eukaryotic translation initiation factor 3 subunit 8 N-terminus
+PF05474	1	2	0	2	0	2	0	Semenogelin
+PF05485	1	2	2	2	2	2	2	THAP domain
+PF05605	1	2	1	2	1	2	1	Drought induced 19 protein (Di19), zinc-binding
+PF05609	1	2	0	2	0	2	0	Lamina-associated polypeptide 1C (LAP1C)
+PF05653	1	2	1	2	1	2	1	Magnesium transporter NIPA
+PF05729	2	8	3	6	3	2	0	NACHT domain
+PF05739	1	2	0	2	0	2	0	SNARE domain
+PF05743	1	2	1	2	1	2	1	UEV domain
+PF05805	2	5	2	3	2	2	0	L6 membrane protein
+PF05821	1	2	2	2	2	2	2	NADH-ubiquinone oxidoreductase ASHI subunit (CI-ASHI or NDUFB8)
+PF05831	3	21	9	14	6	3	1	GAGE protein
+PF05832	1	2	1	2	1	2	1	Eukaryotic protein of unknown function (DUF846)
+PF05856	1	2	2	2	2	2	2	ARP2/3 complex 20 kDa subunit (ARPC4)
+PF05920	2	4	2	2	2	2	0	Homeobox KN domain
+PF05986	2	4	0	2	0	2	0	ADAM-TS Spacer 1
+PF05997	1	2	2	2	2	2	2	Nucleolar protein,Nop52
+PF06021	1	4	0	4	0	4	0	Aralkyl acyl-CoA:amino acid N-acyltransferase
+PF06031	1	2	0	2	0	2	0	SERTA motif
+PF06046	2	4	1	2	1	2	0	Exocyst complex component Sec6
+PF06060	1	2	0	2	0	2	0	Pre-pro-megakaryocyte potentiating factor precursor (Mesothelin)
+PF06083	1	2	0	2	0	2	0	Interleukin-17
+PF06140	1	3	0	3	0	3	0	Interferon-induced 6-16 family
+PF06189	1	2	1	2	1	2	1	5'-nucleotidase
+PF06202	1	2	0	2	0	2	0	Amylo-alpha-1,6-glucosidase
+PF06212	1	2	1	2	1	2	1	GRIM-19 protein
+PF06246	1	2	1	2	1	2	1	Isy1-like splicing family
+PF06297	1	2	3	2	3	2	3	PET Domain
+PF06309	1	2	0	2	0	2	0	Torsin
+PF06312	1	3	0	3	0	3	0	Neurexophilin
+PF06320	1	2	2	2	2	2	2	GCN5-like protein 1 (GCN5L1)
+PF06374	1	2	2	2	2	2	2	NADH-ubiquinone oxidoreductase subunit b14.5b (NDUFC2)
+PF06384	1	2	0	2	0	2	0	Beta-catenin-interacting protein ICAT
+PF06409	6	17	22	5	10	2	0	Nuclear pore complex interacting protein (NPIP)
+PF06413	1	2	1	2	1	2	1	Neugrin
+PF06466	1	2	2	2	2	2	2	PCAF (P300/CBP-associated factor) N-terminal domain
+PF06467	2	6	2	4	2	2	0	MYM-type Zinc finger with FCS sequence motif
+PF06473	1	2	1	2	1	2	1	FGF binding protein 1 (FGF-BP1)
+PF06512	3	8	0	3	0	2	0	Sodium ion transport-associated
+PF06573	1	2	4	2	4	2	4	Churchill protein
+PF06602	1	2	0	2	0	2	0	Myotubularin-like phosphatase domain
+PF06623	1	2	0	2	0	2	0	MHC_I C-terminus
+PF06631	1	2	0	2	0	2	0	Protein of unknown function (DUF1154)
+PF06668	2	5	1	3	1	2	0	Inter-alpha-trypsin inhibitor heavy chain C-terminus
+PF06733	1	2	2	2	2	2	2	DEAD_2
+PF06758	2	7	2	5	2	2	0	Repeat of unknown function (DUF1220)
+PF06881	1	5	1	5	1	5	1	RNA polymerase II transcription factor SIII (Elongin) subunit A
+PF06907	1	2	2	2	2	2	2	Latexin
+PF07019	1	2	2	2	2	2	2	Rab5-interacting protein (Rab5ip)
+PF07051	1	2	0	2	0	2	0	Ovarian carcinoma immunoreactive antigen (OCIA)
+PF07114	1	2	0	2	0	2	0	Transmembrane protein 126
+PF07192	1	2	1	2	1	2	1	SNURF/RPN4 protein
+PF07258	1	2	1	2	1	2	1	COMM domain
+PF07289	1	2	1	2	1	2	1	Bardet-Biedl syndrome 5 protein
+PF07303	1	2	0	2	0	2	0	Occludin homology domain
+PF07347	1	2	2	2	2	2	2	NADH:ubiquinone oxidoreductase subunit B14.5a (Complex I-B14.5a)
+PF07458	2	8	2	5	1	3	1	Sperm protein associated with nucleus, mapped to X chromosome
+PF07496	1	2	1	2	1	2	1	CW-type Zinc Finger
+PF07525	2	4	3	2	3	2	0	SOCS box
+PF07529	1	2	1	2	1	2	1	HSA
+PF07562	1	2	0	2	0	2	0	Nine Cysteines Domain of family 3 GPCR
+PF07645	6	14	42	4	20	2	0	Calcium-binding EGF domain
+PF07648	3	10	3	6	2	2	0	Kazal-type serine protease inhibitor domain
+PF07653	6	13	16	3	10	2	0	Variant SH3 domain
+PF07654	5	30	18	15	17	3	0	Immunoglobulin C1-set domain
+PF07677	2	5	5	3	3	2	2	A-macroglobulin receptor
+PF07678	2	5	5	3	3	2	2	A-macroglobulin complement component
+PF07679	15	32	46	3	15	2	0	Immunoglobulin I-set domain
+PF07686	27	114	157	13	45	2	0	Immunoglobulin V-set domain
+PF07687	2	4	2	2	2	2	0	Peptidase dimerisation domain
+PF07690	7	17	5	4	2	2	0	Major Facilitator Superfamily
+PF07700	1	2	0	2	0	2	0	Haem-NO-binding
+PF07701	1	2	0	2	0	2	0	Heme NO binding associated
+PF07703	2	5	5	3	3	2	2	Alpha-2-macroglobulin family N-terminal region
+PF07707	4	8	6	2	5	2	0	BTB And C-terminal Kelch
+PF07714	13	28	32	4	12	2	0	Protein tyrosine kinase
+PF07716	1	2	0	2	0	2	0	Basic region leucine zipper
+PF07748	1	2	1	2	1	2	1	Glycosyl hydrolases family 38 C-terminal domain
+PF07782	1	2	2	2	2	2	2	DC-STAMP-like protein
+PF07787	1	2	1	2	1	2	1	Transmembrane protein 43
+PF07810	2	4	5	2	5	2	0	TMC domain
+PF07859	2	4	0	2	0	2	0	alpha/beta hydrolase fold
+PF07884	1	2	2	2	2	2	2	Vitamin K epoxide reductase family
+PF07885	1	3	0	3	0	3	0	Ion channel
+PF07946	1	2	2	2	2	2	2	Protein of unknown function (DUF1682)
+PF07965	1	2	1	2	1	2	1	Integrin beta tail domain
+PF07966	2	5	1	3	1	2	0	A1 Propeptide
+PF07973	1	2	1	2	1	2	1	Threonyl and Alanyl tRNA synthetase second additional domain
+PF07974	1	2	1	2	1	2	1	EGF-like domain
+PF07978	1	2	0	2	0	2	0	NIPSNAP
+PF07992	1	2	1	2	1	2	1	Pyridine nucleotide-disulphide oxidoreductase
+PF08016	1	2	1	2	1	2	1	Polycystin cation channel
+PF08022	1	2	2	2	2	2	2	FAD-binding domain
+PF08030	1	2	2	2	2	2	2	Ferric reductase NAD binding domain
+PF08081	1	6	1	6	1	6	1	RBM1CTR (NUC064) family
+PF08152	1	2	0	2	0	2	0	GUCT (NUC152) domain
+PF08205	5	13	38	4	28	2	0	CD80-like C2-set immunoglobulin domain
+PF08210	1	7	0	7	0	7	0	APOBEC-like N-terminal domain
+PF08240	1	7	0	7	0	7	0	Alcohol dehydrogenase GroES-like domain
+PF08246	1	2	0	2	0	2	0	Cathepsin propeptide inhibitor domain (I29)
+PF08266	1	55	11	55	11	55	11	Cadherin-like
+PF08321	1	2	5	2	5	2	5	PPP5 TPR repeat region
+PF08357	1	2	0	2	0	2	0	SEFIR domain
+PF08391	1	2	5	2	5	2	5	Ly49-like protein, N-terminal region
+PF08423	1	2	1	2	1	2	1	Rad51
+PF08434	1	3	0	3	0	3	0	Calcium-activated chloride channel
+PF08441	2	5	1	3	1	2	0	Integrin alpha
+PF08444	1	4	0	4	0	4	0	Aralkyl acyl-CoA:amino acid N-acyltransferase, C-terminal region
+PF08447	1	2	0	2	0	2	0	PAS fold
+PF08466	1	2	1	2	1	2	1	Inward rectifier potassium channel N-terminal
+PF08487	2	5	1	3	1	2	0	Vault protein inter-alpha-trypsin domain
+PF08515	2	4	0	2	0	2	0	Transforming growth factor beta type I GS-motif
+PF08516	3	8	1	4	1	2	0	ADAM cysteine-rich
+PF08526	1	5	1	5	1	5	1	Protein-arginine deiminase (PAD) N-terminal domain
+PF08527	1	5	1	5	1	5	1	Protein-arginine deiminase (PAD) middle domain
+PF08539	1	2	1	2	1	2	1	HbrB-like
+PF08562	1	3	1	3	1	3	1	Crisp
+PF08571	1	2	1	2	1	2	1	Yos1-like
+PF08669	1	2	1	2	1	2	1	Glycine cleavage T-protein C-terminal barrel domain
+PF08699	1	3	0	3	0	3	0	Argonaute linker 1 domain
+PF08702	1	3	0	3	0	3	0	Fibrinogen alpha/beta chain family
+PF08711	3	8	12	4	5	2	2	TFIIS helical bundle-like domain
+PF08725	1	2	1	2	1	2	1	Integrin beta cytoplasmic domain
+PF08736	1	2	0	2	0	2	0	FERM adjacent (FA)
+PF08742	1	3	0	3	0	3	0	C8 domain
+PF08758	1	3	0	3	0	3	0	Cadherin prodomain like
+PF08840	1	4	1	4	1	4	1	BAAT / Acyl-CoA thioester hydrolase C terminal
+PF08953	1	2	2	2	2	2	2	Domain of unknown function (DUF1899)
+PF08976	1	2	0	2	0	2	0	EF-hand domain
+PF08997	1	2	1	2	1	2	1	Ubiquinol-cytochrome C reductase complex, 6.4kD protein
+PF09042	1	2	1	2	1	2	1	Titin Z
+PF09162	1	3	5	3	5	3	5	Tap, RNA-binding
+PF09240	2	4	1	2	1	2	0	Interleukin-6 receptor alpha chain, binding
+PF09279	1	2	0	2	0	2	0	Phosphoinositide-specific phospholipase C, efhand-like
+PF09294	2	7	1	5	1	2	0	Interferon-alpha/beta receptor, fibronectin type III
+PF09303	1	2	0	2	0	2	0	KCNMB2, ball and chain domain
+PF09310	1	3	0	3	0	3	0	POU domain, class 2, associating factor 1
+PF09336	1	2	3	2	3	2	3	Vps4 C terminal oligomerisation domain
+PF09341	1	4	6	4	6	4	6	Transcription factor Pcc1
+PF09379	2	4	0	2	0	2	0	FERM N-terminal domain
+PF09380	2	4	0	2	0	2	0	FERM C-terminal PH-like domain
+PF09443	1	2	2	2	2	2	2	Cripto_Frl-1_Cryptic (CFC)
+PF09514	2	8	0	5	0	3	0	SSXRD motif
+PF09791	1	2	2	2	2	2	2	Oxidoreductase-like protein, N-terminal
+PF09801	1	2	2	2	2	2	2	Integral membrane protein S linking to the trans Golgi network
+PF09803	1	2	2	2	2	2	2	Uncharacterized conserved protein (DUF2346)
+PF09805	1	2	1	2	1	2	1	Nucleolar protein 12 (25kDa)
+PF09848	1	3	1	3	1	3	1	Uncharacterized conserved protein (DUF2075)
+PF10037	1	2	0	2	0	2	0	Mitochondrial 28S ribosomal protein S27
+PF10075	1	2	6	2	6	2	6	CSN8/PSMD8/EIF3K family
+PF10148	1	3	1	3	1	3	1	Schwannomin-interacting protein 1
+PF10149	1	2	1	2	1	2	1	Transmembrane protein 231
+PF10167	1	2	2	2	2	2	2	Uncharacterised conserved protein
+PF10190	1	2	1	2	1	2	1	Putative transmembrane protein 170
+PF10204	1	2	2	2	2	2	2	Dual oxidase maturation factor
+PF10206	1	2	2	2	2	2	2	Mitochondrial F1F0-ATP synthase, subunit f
+PF10220	1	2	1	2	1	2	1	Smg8_Smg9
+PF10231	1	2	1	2	1	2	1	Uncharacterised conserved protein (DUF2315)
+PF10246	1	2	1	2	1	2	1	Mitochondrial ribosomal protein MRP-S35
+PF10251	1	2	3	2	3	2	3	Presenilin enhancer-2 subunit of gamma secretase
+PF10294	3	6	5	2	2	2	1	Lysine methyltransferase
+PF10354	1	2	2	2	2	2	2	Domain of unknown function (DUF2431)
+PF10421	1	3	0	3	0	3	0	2'-5'-oligoadenylate synthetase 1, domain 2, C-terminus
+PF10486	1	2	0	2	0	2	0	Phosphoinositide 3-kinase gamma adapter protein p101 subunit
+PF10487	1	2	3	2	3	2	3	Nucleoporin subcomplex protein binding to Pom34
+PF10520	1	2	1	2	1	2	1	B domain of TMEM189, localisation domain
+PF10557	1	2	4	2	4	2	4	Cullin protein neddylation domain
+PF10558	1	2	2	2	2	2	2	Mitochondrial 18 KDa protein (MTP18)
+PF10569	2	5	5	3	3	2	2	Alpha-macro-globulin thiol-ester bond-forming region
+PF10574	1	2	1	2	1	2	1	Uncharacterised protein family UPF0552
+PF10584	2	4	3	2	2	2	1	Proteasome subunit A N-terminal signature
+PF10630	2	5	1	3	1	2	0	Protein of unknown function (DUF2476)
+PF11002	2	4	3	2	3	2	0	RFPL defining motif (RDM)
+PF11069	1	2	1	2	1	2	1	Protein of unknown function (DUF2870)
+PF11232	1	2	1	2	1	2	1	Mediator complex subunit 25 PTOV activation and synapsin 2
+PF11357	1	3	12	3	12	3	12	Cell cycle regulatory protein
+PF11365	1	2	1	2	1	2	1	Protein SOGA
+PF11461	1	2	1	2	1	2	1	Rab interacting lysosomal protein
+PF11515	1	2	4	2	4	2	4	Mouse development and cellular proliferation protein Cullin-7
+PF11759	1	14	9	14	9	14	9	Keratin-associated matrix
+PF11838	1	3	1	3	1	3	1	ERAP1-like C-terminal domain
+PF11933	2	4	0	2	0	2	0	Cytoplasmic domain of voltage-gated Na+ ion channel
+PF11938	1	2	2	2	2	2	2	TLR4 regulator and MIR-interacting MSAP
+PF11977	1	2	2	2	2	2	2	Zc3h12a-like Ribonuclease NYN domain
+PF12001	2	4	0	2	0	2	0	Domain of unknown function (DUF3496)
+PF12018	1	2	1	2	1	2	1	Domain of unknown function (DUF3508)
+PF12020	1	2	0	2	0	2	0	TAFA family
+PF12037	1	3	0	3	0	3	0	Domain of unknown function (DUF3523)
+PF12052	1	2	1	2	1	2	1	Voltage gated calcium channel subunit beta domain 4Aa N terminal
+PF12062	1	2	1	2	1	2	1	heparan sulfate-N-deacetylase
+PF12067	1	2	1	2	1	2	1	Sox 17/18 central domain
+PF12301	1	2	0	2	0	2	0	CD99 antigen like protein 2
+PF12352	1	2	1	2	1	2	1	Snare region anchored in the vesicle membrane C-terminus
+PF12400	1	2	2	2	2	2	2	STIMATE family
+PF12409	1	2	1	2	1	2	1	P5-type ATPase cation transporter
+PF12417	1	6	0	6	0	6	0	Zinc finger protein
+PF12440	5	19	11	6	7	2	0	Melanoma associated antigen family N terminal
+PF12443	1	2	2	2	2	2	2	AT-hook-containing transcription factor
+PF12480	1	3	0	3	0	3	0	Protein of unknown function (DUF3699)
+PF12534	1	4	0	4	0	4	0	Pannexin-like TM region of LRRC8
+PF12661	2	4	14	2	12	2	2	Human growth factor-like EGF
+PF12662	2	4	15	2	15	2	0	Complement Clr-like EGF-like
+PF12689	1	2	1	2	1	2	1	Acid Phosphatase
+PF12697	1	3	2	3	2	3	2	Alpha/beta hydrolase family
+PF12698	1	5	0	5	0	5	0	ABC-2 family transporter protein
+PF12721	1	2	1	2	1	2	1	RIP homotypic interaction motif
+PF12796	32	68	136	4	24	2	0	Ankyrin repeats (3 copies)
+PF12799	1	2	6	2	6	2	6	Leucine Rich repeats (2 copies)
+PF12874	7	25	45	10	18	2	0	Zinc-finger of C2H2 type
+PF12881	2	4	0	2	0	2	0	NUT protein
+PF12937	2	4	3	2	2	2	1	F-box-like
+PF13176	1	2	3	2	3	2	3	Tetratricopeptide repeat
+PF13181	3	9	10	5	7	2	1	Tetratricopeptide repeat
+PF13193	1	5	2	5	2	5	2	AMP-binding enzyme C-terminal domain
+PF13246	1	2	0	2	0	2	0	Cation transport ATPase (P-type)
+PF13306	2	5	3	3	2	2	1	Leucine rich repeats (6 copies)
+PF13307	1	2	2	2	2	2	2	Helicase C-terminal domain
+PF13330	1	2	0	2	0	2	0	Mucin-2 protein WxxW repeating region
+PF13365	1	2	0	2	0	2	0	Trypsin-like peptidase domain
+PF13374	1	2	3	2	3	2	3	Tetratricopeptide repeat
+PF13393	1	2	3	2	3	2	3	Histidyl-tRNA synthetase
+PF13402	1	3	1	3	1	3	1	Peptidase M60, enhancin and enhancin-like
+PF13405	1	2	0	2	0	2	0	EF-hand domain
+PF13415	1	2	1	2	1	2	1	Galactose oxidase, central domain
+PF13417	1	2	0	2	0	2	0	Glutathione S-transferase, N-terminal domain
+PF13418	1	2	1	2	1	2	1	Galactose oxidase, central domain
+PF13424	3	8	7	4	3	2	1	Tetratricopeptide repeat
+PF13432	1	2	1	2	1	2	1	Tetratricopeptide repeat
+PF13445	4	10	41	4	26	2	1	RING-type zinc-finger
+PF13465	3	10	25	5	15	2	1	Zinc-finger double domain
+PF13499	9	18	45	2	16	2	0	EF-hand domain pair
+PF13516	7	19	34	6	15	2	0	Leucine Rich repeat
+PF13520	2	4	23	2	17	2	6	Amino acid permease
+PF13540	1	2	4	2	4	2	4	Regulator of chromosome condensation (RCC1) repeat
+PF13561	2	5	0	3	0	2	0	Enoyl-(Acyl carrier protein) reductase
+PF13606	1	2	3	2	3	2	3	Ankyrin repeat
+PF13621	1	2	2	2	2	2	2	Cupin-like domain
+PF13637	5	10	32	2	13	2	0	Ankyrin repeats (many copies)
+PF13639	2	4	4	2	3	2	1	Ring finger domain
+PF13646	1	2	0	2	0	2	0	HEAT repeats
+PF13649	1	2	5	2	5	2	5	Methyltransferase domain
+PF13656	1	4	8	4	8	4	8	RNA polymerase Rpb3/Rpb11 dimerisation domain
+PF13671	2	4	2	2	2	2	0	AAA domain
+PF13676	1	2	1	2	1	2	1	TIR domain
+PF13695	1	3	2	3	2	3	2	Zinc-binding domain
+PF13716	1	2	1	2	1	2	1	Divergent CRAL/TRIO domain
+PF13765	8	27	52	6	35	2	0	SPRY-associated domain
+PF13772	1	2	0	2	0	2	0	AIG2-like family
+PF13812	1	2	3	2	3	2	3	Pentatricopeptide repeat domain
+PF13831	1	3	0	3	0	3	0	PHD-finger
+PF13832	1	3	0	3	0	3	0	PHD-zinc-finger like domain
+PF13833	4	8	22	2	16	2	0	EF-hand domain pair
+PF13836	1	2	0	2	0	2	0	Domain of unknown function (DUF4195)
+PF13840	1	2	1	2	1	2	1	ACT domain
+PF13841	6	29	4	8	2	2	0	Beta defensin
+PF13843	1	2	0	2	0	2	0	Transposase IS4
+PF13847	1	2	2	2	2	2	2	Methyltransferase domain
+PF13851	1	2	1	2	1	2	1	Growth-arrest specific micro-tubule binding
+PF13853	36	351	88	50	17	2	0	Olfactory receptor
+PF13855	18	44	43	4	19	2	0	Leucine rich repeat
+PF13857	2	4	28	2	19	2	9	Ankyrin repeats (many copies)
+PF13877	1	2	2	2	2	2	2	Potential Monad-binding region of RPAP3
+PF13885	3	41	5	25	3	2	1	Keratin, high sulfur B2 protein
+PF13893	1	2	1	2	1	2	1	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+PF13894	17	75	126	22	64	2	0	C2H2-type zinc finger
+PF13895	11	60	53	19	21	2	0	Immunoglobulin domain
+PF13898	1	2	2	2	2	2	2	Domain of unknown function (DUF4205)
+PF13899	1	2	0	2	0	2	0	Thioredoxin-like
+PF13903	1	2	1	2	1	2	1	PMP-22/EMP/MP20/Claudin tight junction
+PF13909	1	2	2	2	2	2	2	C2H2-type zinc-finger domain
+PF13912	37	273	230	40	64	2	0	C2H2-type zinc finger
+PF13913	1	2	0	2	0	2	0	zinc-finger of a C2HC-type
+PF13920	2	4	2	2	2	2	0	Zinc finger, C3HC4 type (RING finger)
+PF13923	2	4	2	2	1	2	1	Zinc finger, C3HC4 type (RING finger)
+PF13927	16	56	112	10	28	2	0	Immunoglobulin domain
+PF14047	1	2	0	2	0	2	0	Dppa2/4 conserved region
+PF14048	1	5	0	5	0	5	0	C-terminal domain of methyl-CpG binding protein 2 and 3
+PF14049	1	2	0	2	0	2	0	Dppa2/4 conserved region in higher vertebrates
+PF14138	1	2	1	2	1	2	1	Cytochrome c oxidase assembly protein COX16
+PF14260	1	2	1	2	1	2	1	C4-type zinc-finger of DNA polymerase delta
+PF14291	1	2	1	2	1	2	1	Domain of unknown function (DUF4371)
+PF14478	1	2	0	2	0	2	0	Domain of unknown function (DUF4430)
+PF14497	2	6	2	4	1	2	1	Glutathione S-transferase, C-terminal domain
+PF14575	1	2	3	2	3	2	3	Ephrin type-A receptor 2 transmembrane domain
+PF14604	2	4	9	2	6	2	3	Variant SH3 domain
+PF14636	1	2	1	2	1	2	1	Folliculin-interacting protein N-terminus
+PF14642	1	2	1	2	1	2	1	FAM47 family
+PF14650	3	7	3	3	3	2	0	FAM75 family
+PF14653	1	4	0	4	0	4	0	Insulin growth factor-like family
+PF14654	1	2	0	2	0	2	0	Mucin, catalytic, TM and cytoplasmic tail region
+PF14670	2	4	3	2	3	2	0	Coagulation Factor Xa inhibitory site
+PF14672	1	17	4	17	4	17	4	Late cornified envelope
+PF14698	1	2	1	2	1	2	1	Argininosuccinate lyase C-terminal
+PF14699	1	2	0	2	0	2	0	N-terminal domain from the human glycogen debranching enzyme
+PF14701	1	2	0	2	0	2	0	Glycogen debranching enzyme, glucanotransferase domain
+PF14702	1	2	0	2	0	2	0	Central domain of human glycogen debranching enzyme
+PF14707	1	4	0	4	0	4	0	C-terminal region of aryl-sulfatase
+PF14735	1	2	1	2	1	2	1	HAUS augmin-like complex subunit 4
+PF14740	1	2	1	2	1	2	1	Domain of unknown function (DUF4471)
+PF14748	1	2	1	2	1	2	1	Pyrroline-5-carboxylate reductase dimerisation
+PF14779	1	2	2	2	2	2	2	Ciliary BBSome complex subunit 1
+PF14798	2	6	1	3	1	3	0	Calcium homeostasis modulator
+PF14820	1	6	0	6	0	6	0	Small proline-rich 2
+PF14845	1	2	2	2	2	2	2	beta-acetyl hexosaminidase like
+PF14857	1	2	3	2	3	2	3	TMEM151 family
+PF14893	2	9	3	5	2	4	1	PNMA
+PF14901	1	2	3	2	3	2	3	Cleavage inducing molecular chaperone
+PF14904	1	2	1	2	1	2	1	Family of unknown function
+PF14914	1	2	4	2	4	2	4	LRRC37A/B like protein 1 C-terminal domain
+PF14915	4	9	13	3	11	2	0	CCDC144C protein coiled-coil region
+PF14938	1	3	9	3	9	3	9	Soluble NSF attachment protein, SNAP
+PF14942	1	2	2	2	2	2	2	Organelle biogenesis, Muted-like protein
+PF14948	1	2	0	2	0	2	0	RESP18 domain
+PF14949	1	2	1	2	1	2	1	ARF7 effector protein C-terminus
+PF14999	1	2	2	2	2	2	2	Shadow of prion protein, neuroprotective
+PF15014	1	2	2	2	2	2	2	Ceroid-lipofuscinosis neuronal protein 5
+PF15037	1	2	0	2	0	2	0	Interleukin-17 receptor extracellular region
+PF15038	1	2	1	2	1	2	1	Jiraiya
+PF15047	1	2	2	2	2	2	2	Protein of unknown function (DUF4533)
+PF15058	1	2	1	2	1	2	1	Speriolin N terminus
+PF15070	7	19	1	5	1	2	0	Putative golgin subfamily A member 2-like protein 5
+PF15118	1	3	9	3	9	3	9	Domain of unknown function (DUF4560)
+PF15119	1	2	1	2	1	2	1	Apolipoprotein C4
+PF15132	1	2	2	2	2	2	2	Domain of unknown function (DUF4568)
+PF15155	1	2	1	2	1	2	1	MORF4 family-associated protein1
+PF15156	1	2	2	2	2	2	2	Ceroid-lipofuscinosis neuronal protein 6
+PF15157	1	2	2	2	2	2	2	Fusion protein IQCJ-SCHIP1 with IQ-like motif
+PF15177	1	3	0	3	0	3	0	Interleukin-28A
+PF15178	1	2	2	2	2	2	2	Mitochondrial import receptor subunit TOM5 homolog
+PF15190	1	2	2	2	2	2	2	Transmembrane protein 251
+PF15193	1	2	1	2	1	2	1	FAM24 family
+PF15200	1	2	0	2	0	2	0	Keratinocyte differentiation-associated
+PF15206	1	2	2	2	2	2	2	FAM209 family
+PF15227	10	28	22	6	6	2	0	zinc finger of C3HC4-type, RING
+PF15231	2	5	1	3	1	2	0	Variable charge X/Y family
+PF15240	1	8	12	8	12	8	12	Proline-rich
+PF15277	1	2	0	2	0	2	0	Exocyst complex component SEC3 N-terminal PIP2 binding PH
+PF15300	1	11	0	11	0	11	0	INTS6/SAGE1/DDX26B/CT45 C-terminus
+PF15304	1	2	1	2	1	2	1	A-kinase anchor protein 2 C-terminus
+PF15313	1	2	0	2	0	2	0	Hexamethylene bis-acetamide-inducible protein
+PF15314	1	2	3	2	3	2	3	Proline-rich acidic protein 1, pregnancy-specific uterine
+PF15328	1	2	1	2	1	2	1	Putative GRINL1B complex locus protein 2
+PF15330	1	2	5	2	5	2	5	SHP2-interacting transmembrane adaptor protein, SIT
+PF15332	1	3	2	3	2	3	2	Lck-interacting transmembrane adapter 1
+PF15363	1	2	0	2	0	2	0	Domain of unknown function (DUF4596)
+PF15364	1	2	2	2	2	2	2	PAXIP1-associated-protein-1 C term PTIP binding protein
+PF15371	3	7	0	3	0	2	0	Domain of unknown function (DUF4599)
+PF15372	1	2	1	2	1	2	1	Domain of unknown function (DUF4600)
+PF15423	1	2	0	2	0	2	0	FLYWCH-type zinc finger-containing protein
+PF15429	1	2	2	2	2	2	2	Domain of unknown function (DUF4628)
+PF15441	1	2	4	2	4	2	4	Rho guanine nucleotide exchange factor 5/35
+PF15483	1	3	0	3	0	3	0	Domain of unknown function (DUF4641)
+PF15490	1	2	3	2	3	2	3	Telomere-capping, CST complex subunit
+PF15494	1	2	3	2	3	2	3	Scavenger receptor cysteine-rich domain
+PF15511	3	12	34	7	25	2	4	Centromere kinetochore component CENP-T histone fold
+PF15549	1	2	0	2	0	2	0	PGC7/Stella/Dppa3 domain
+PF15552	1	2	1	2	1	2	1	Domain of unknown function (DUF4657)
+PF15621	1	3	0	3	0	3	0	Proline-rich submaxillary gland androgen-regulated family
+PF15623	1	14	0	14	0	14	0	Cancer/testis gene family 47
+PF15630	1	2	1	2	1	2	1	CENP-S protein
+PF15670	1	3	0	3	0	3	0	Spermatid maturation protein 1
+PF15682	1	3	2	3	2	3	2	Musculoskeletal, temporally activated-embryonic nuclear protein 1
+PF15694	1	2	5	2	5	2	5	Mediator complex subunit 26 middle domain
+PF15705	1	2	2	2	2	2	2	Mature oligodendrocyte transmembrane protein, TMEM132D, N-term
+PF15706	1	2	2	2	2	2	2	Mature oligodendrocyte transmembrane protein, TMEM132D, C-term
+PF15708	1	5	0	5	0	5	0	Proline-rich protein family 20
+PF15709	1	2	0	2	0	2	0	Domain of unknown function (DUF4670)
+PF15715	1	2	1	2	1	2	1	PCNA-associated factor
+PF15722	1	2	1	2	1	2	1	FAM153 family
+PF15747	1	2	1	2	1	2	1	Domain of unknown function (DUF4687)
+PF15761	1	2	1	2	1	2	1	Immortalisation up-regulated protein
+PF15779	1	2	4	2	4	2	4	Leucine-rich repeat-containing protein 37 family
+PF15790	1	2	0	2	0	2	0	E1A-binding protein p400, N-terminal
+PF15791	1	2	4	2	4	2	4	Doublesex-and mab-3-related transcription factor C1 and C2
+PF15820	1	2	1	2	1	2	1	Endothelial cell-specific chemotaxis regulator
+PF15840	1	2	4	2	4	2	4	ADP-ribosylation factor-like protein 17
+PF15867	1	2	2	2	2	2	2	Dynein attachment factor N-terminus
+PF15897	1	3	1	3	1	3	1	Domain of unknown function (DUF4741)
+PF15903	2	4	1	2	1	2	0	Filopodia upregulated, FAM65
+PF15910	1	2	1	2	1	2	1	ICOS V-set domain
+PF15936	1	2	1	2	1	2	1	Domain of unknown function (DUF4749)
+PF15974	1	37	20	37	20	37	20	Cadherin C-terminal cytoplasmic tail, catenin-binding region
+PF16005	1	6	1	6	1	6	1	KH-like RNA-binding domain
+PF16070	1	2	2	2	2	2	2	Transmembrane protein family 132
+PF16088	1	2	1	2	1	2	1	UPF0693 family
+PF16196	1	6	14	6	14	6	14	C1-set C-terminal domain
+PF16207	1	2	1	2	1	2	1	RAWUL domain RING finger- and WD40-associated ubiquitin-like
+PF16208	1	25	1	25	1	25	1	Keratin type II head
+PF16211	4	17	41	6	26	2	2	C-terminus of histone H2A
+PF16218	1	2	0	2	0	2	0	Peptidase family C101
+PF16297	1	3	0	3	0	3	0	Domain of unknown function (DUF4939)
+PF16300	1	2	2	2	2	2	2	Type of WD40 repeat
+PF16320	1	2	1	2	1	2	1	Ribosomal protein L7/L12 dimerisation domain
+PF16366	1	2	1	2	1	2	1	Cytoplasmic polyadenylation element-binding protein ZZ domain
+PF16367	1	2	1	2	1	2	1	RNA recognition motif
+PF16368	1	2	1	2	1	2	1	Cytoplasmic polyadenylation element-binding protein 1 N-terminus
+PF16454	2	4	3	2	2	2	1	Phosphatidylinositol 3-kinase regulatory subunit P85 inter-SH2 domain
+PF16486	1	3	0	3	0	3	0	N-terminal domain of argonaute
+PF16487	1	3	0	3	0	3	0	Mid domain of argonaute
+PF16488	1	3	0	3	0	3	0	Argonaute linker 2 domain
+PF16489	1	2	10	2	10	2	10	GPCR-Autoproteolysis INducing (GAIN) domain
+PF16492	1	41	16	41	16	41	16	Cadherin cytoplasmic C-terminal
+PF16497	1	5	0	5	0	5	0	MHC-I family domain
+PF16564	1	5	0	5	0	5	0	p55-binding region of Methyl-CpG-binding domain proteins MBD
+PF16644	1	2	0	2	0	2	0	Regulatory region of Na+/H+ exchanger NHE binds to calmodulin
+PF16678	1	2	2	2	2	2	2	UB-associated-like domain of HOIP or E3 ubiquitin-protein ligase
+PF16680	1	2	0	2	0	2	0	T-cell surface glycoprotein CD3 delta chain
+PF16863	1	2	3	2	3	2	3	N-terminal barrel of NtMGAM and CtMGAM, maltase-glucoamylase
+PF16864	1	2	2	2	2	2	2	Dimerisation domain
+PF16878	2	5	1	3	1	2	0	Transcriptional regulator, SIX1, N-terminal SD domain
+PF16884	2	4	3	2	2	2	1	N-terminal domain of oxidoreductase
+PF16906	1	2	1	2	1	2	1	Ribosomal proteins L26 eukaryotic, L24P archaeal
+PF16953	1	2	2	2	2	2	2	Protein-only RNase P
+PF16959	1	2	0	2	0	2	0	Renal amino acid transporter
+PF16975	1	2	0	2	0	2	0	Ly6/PLAUR domain-containing protein 6, Lypd6
+PF17039	1	3	1	3	1	3	1	Fucosyltransferase, N-terminal
+PF17048	1	2	2	2	2	2	2	Neutral/alkaline non-lysosomal ceramidase, C-terminal
+PF17177	1	2	3	2	3	2	3	Pentacotripeptide-repeat region of PROPR
