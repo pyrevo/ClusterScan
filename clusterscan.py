@@ -21,7 +21,7 @@ Options:
   -s, --slide=<bp>                  Sliding size [default: 250000].
   -k, --seed=<n>                    Number of standard deviations to identify a window which serves as the beginning of the cluster [default: 3].
   -e, --extension=<n>               Number of standard deviations to identify the window(s) which serve to extend the cluster [default: 2].
-  -c, --category LIST               Comma separated list of one or more specific categories to be analyzed [e.g. PF00001,PF00002].
+  -c, --category LIST               Comma separated list of one or more specific categories to be analyzed, not separated by space [e.g. PF00001,PF00002].
   --info FILE                       Specify optional file to describe categories.
   --singletons                      Identify singletons after clusters and bystanders annotation.
   --version                         Show program version.
@@ -163,8 +163,8 @@ def main():
     table = table.sort_values(["category", "chr"], ascending=[True, True])
     table = table[table["n_features"] >= int(arguments['--nf'])]
     table = table.sort_values(by=["category"], ascending=[True])
-    # table['ID'] = range(1, len(table) + 1)
-    table['ID'] = ["C"+str(i) for i in range(1, len(table) + 1)]
+    # table["cluster_id"] = range(1, len(table) + 1)
+    table["cluster_id"] = ["C"+str(i) for i in range(1, len(table) + 1)]
     # get the total number of clusters
     c = table.shape[0]
 
@@ -182,8 +182,8 @@ def main():
     cl_features = features[features[6] == features[11]]
     cl_features = cl_features[[0, 1, 2, 3, 4, 5, 12, 11]]
     cl_features.columns = ["chr", "start", "end", "name", "score",
-                           "strand", "ID", "category"]
-
+                           "strand", "cluster_id", "category"]
+    cl_features.drop('score', axis=1, inplace=True)
     # generate table of bystanders
     bystanders = features[features[6] != features[11]]
 
@@ -200,18 +200,19 @@ def main():
     else:
         bystanders = bystanders[[0, 1, 2, 3, 4, 5, 12, 11]]
         bystanders.columns = ["chr", "start", "end", "name", "score",
-                              "strand", "ID", "category"]
+                              "strand", "cluster_id", "category"]
         # prevent bystanders with 2+ different categories to be counted twice
-        bystanders = bystanders.drop_duplicates(['name', 'ID'])
+        bystanders = bystanders.drop_duplicates(['name', "cluster_id"])
         # prevent features with 2+ different categories to be bystanders in theyr clusters
         bs_merge = pd.merge(bystanders, cl_features, how='outer', indicator=True)
         bystanders = bs_merge.ix[bs_merge._merge == 'left_only']
-        bystanders = bystanders.drop(bystanders.columns[8], axis=1)
+        #bystanders = bystanders.drop(bystanders.columns[8], axis=1)
+        bystanders = bystanders.drop(bystanders.columns[[4, 8]], axis=1)
         # count bystanders number
-        bs_count = bystanders.groupby('ID').count().reset_index()
+        bs_count = bystanders.groupby("cluster_id").count().reset_index()
         bs_count = bs_count[[0, 1]]
-        bs_count.columns = ["ID", "n_bystanders"]
-        table = table.merge(bs_count, on="ID", how='outer')
+        bs_count.columns = ["cluster_id", "n_bystanders"]
+        table = table.merge(bs_count, on="cluster_id", how='outer')
         table = table[[5, 4, 0, 1, 2, 3, 6]]
         table["n_bystanders"].fillna(0, inplace=True)
         table["n_bystanders"] = table["n_bystanders"].astype(int)
@@ -236,7 +237,7 @@ def main():
         summary = n_clusters.merge(n_ft_bs, on="category").merge(max_ft_bs, on="category").merge(min_ft_bs, on="category")
     else:
         desc = pd.read_table(arguments['--info'], header=None)
-        desc.columns = ["category", "DESC"]
+        desc.columns = ["category", "description"]
         summary = n_clusters.merge(n_ft_bs, on="category").merge(max_ft_bs, on="category").merge(min_ft_bs, on="category").merge(desc, on="category")
 
     # assign file names and save tables as result
@@ -244,30 +245,33 @@ def main():
         os.makedirs(arguments['--output'])
 
     if arguments['--analysis'] is None:
-        feat_name = os.path.join(arguments['--output'], 'features.csv')
-        byst_name = os.path.join(arguments['--output'], 'bystanders.csv')
-        clus_name = os.path.join(arguments['--output'], 'clusters.csv')
-        summ_name = os.path.join(arguments['--output'], 'summary.csv')
+        feat_name = os.path.join(arguments['--output'], 'features.tsv')
+        byst_name = os.path.join(arguments['--output'], 'bystanders.tsv')
+        clus_name = os.path.join(arguments['--output'], 'clusters.tsv')
+        summ_name = os.path.join(arguments['--output'], 'summary.tsv')
         bed_name = os.path.join(arguments['--output'], 'clusters.bed')
         plot_name = os.path.join(arguments['--output'], 'distribution.pdf')
     else:
-        feat_name = os.path.join(arguments['--output'], arguments['--analysis']+'_features.csv')
-        byst_name = os.path.join(arguments['--output'], arguments['--analysis']+'_bystanders.csv')
-        clus_name = os.path.join(arguments['--output'], arguments['--analysis']+'_clusters.csv')
-        summ_name = os.path.join(arguments['--output'], arguments['--analysis']+'_summary.csv')
+        feat_name = os.path.join(arguments['--output'], arguments['--analysis']+'_features.tsv')
+        byst_name = os.path.join(arguments['--output'], arguments['--analysis']+'_bystanders.tsv')
+        clus_name = os.path.join(arguments['--output'], arguments['--analysis']+'_clusters.tsv')
+        summ_name = os.path.join(arguments['--output'], arguments['--analysis']+'_summary.tsv')
         bed_name = os.path.join(arguments['--output'], arguments['--analysis']+'_clusters.bed')
         plot_name = os.path.join(arguments['--output'], arguments['--analysis']+'_distribution.pdf')
 
+    cl_features["start"] += 1
+    bystanders["start"] += 1
     table["start"] += 1
+
     cl_features.to_csv(feat_name, sep='\t', header=True, index=False)
     bystanders.to_csv(byst_name, sep='\t', header=True, index=False)
     table.to_csv(clus_name, sep='\t', header=True, index=False)
     summary.to_csv(summ_name, sep='\t', header=True, index=False)
 
     if arguments['--analysis'] is None:
-        bed.saveas(bed_name, trackline='track name="%s" description="chr start end ID n_features strand category"' % (arguments['FEATURES']))
+        bed.saveas(bed_name, trackline='track name="%s" description="chr start end cluster_id n_features strand category"' % (arguments['FEATURES']))
     else:
-        bed.saveas(bed_name, trackline='track name="%s" description="chr start end ID n_features strand category"' % (arguments['--analysis']))
+        bed.saveas(bed_name, trackline='track name="%s" description="chr start end cluster_id n_features strand category"' % (arguments['--analysis']))
 
     # plot a duistribution for top 10 clusters (per n of features)
     rpy2_plotter(summary, table, plot_name)
@@ -280,12 +284,14 @@ def main():
             print "ClusterScan didn't found any singleton!"
         else:
             if arguments['--analysis'] is None:
-                st_name = os.path.join(arguments['--output'], 'singletons.csv')
+                st_name = os.path.join(arguments['--output'], 'singletons.tsv')
             else:
-                st_name = os.path.join(arguments['--output'], arguments['--analysis']+'_singletons.csv')
+                st_name = os.path.join(arguments['--output'], arguments['--analysis']+'_singletons.tsv')
 
             singletons.columns = ["chr", "start", "end", "name", "score",
                               "strand", "category"]
+            singletons.drop('score', axis=1, inplace=True)
+            singletons["start"] += 1
             singletons.to_csv(st_name, sep='\t', header=True, index=False)
     else:
         pass
