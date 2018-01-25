@@ -1,6 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Copyright (C) 2017-2018 Massimiliano Volpe and Marco Miralto
+
+# This file is part of ClusterScan.
+
+# ClusterScan is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# ClusterScan is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with ClusterScan.  If not, see <http://www.gnu.org/licenses/>.
+
 
 """Description:
   ClusterScan, search for clusters of features in a given annotation.
@@ -216,6 +233,8 @@ def main():
         table = table[[5, 4, 0, 1, 2, 3, 6]]
         table["n_bystanders"].fillna(0, inplace=True)
         table["n_bystanders"] = table["n_bystanders"].astype(int)
+        bystanders["start"] += 1
+
 
     # generate summary table
     summary = table.drop(table.columns[[0, 2, 3, 4]], axis=1)
@@ -260,7 +279,6 @@ def main():
         plot_name = os.path.join(arguments['--output'], arguments['--analysis']+'_distribution.pdf')
 
     cl_features["start"] += 1
-    bystanders["start"] += 1
     table["start"] += 1
 
     cl_features.to_csv(feat_name, sep='\t', header=True, index=False)
