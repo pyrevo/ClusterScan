@@ -78,10 +78,9 @@ pip install rpy2==2.8.3
 pip install pybedtools==0.7.8
 ```
 You can find more informations at: 
-- [pandas](https://pandas.pydata.org/) (v0.19.1)
-- [pybedtools](https://daler.github.io/pybedtools/) (v0.7.8)
-- [rpy2](https://rpy2.readthedocs.io/en/version_2.8.x/) (v2.8.3)
-
+- [pandas](https://pandas.pydata.org/)
+- [pybedtools](https://daler.github.io/pybedtools/)
+- [rpy2](https://rpy2.readthedocs.io/en/version_2.8.x/)
 
 ### Installing ClusterScan
 Now, you can download and extract ClusterScan in your preferred directory:
@@ -98,9 +97,9 @@ Save and exit. To test the clusterscan installation you must open a new terminal
 ```
 clusterscan.py -h
 ```
-If you visualize the clusterscan help page, you can proceed to run your first analysis by following the [ClusterScan Tutorial](https://github.com/pyrevo/ClusterScan/wiki/ClusterScan-Tutorial).
+If you visualize the ClusterScan help page, you can proceed to run your first analysis by following the [ClusterScan Tutorial](https://github.com/pyrevo/ClusterScan/wiki/ClusterScan-Tutorial).
 
-We have tested ClusterScan tested on [Ubuntu](https://www.ubuntu.com/) (v14.04LTS+). ClusterScan is distributed under the [GNU General Public License (GPL) Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+We have tested ClusterScan on [Ubuntu](https://www.ubuntu.com/) (v14.04LTS+). ClusterScan is distributed under the [GNU General Public License (GPL) Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## Options:
 ClusterScan provides different options in order to finely tune the cluster search. Some of them are algorithm-specific whereas other are in common between clusterdist and clustermean:
@@ -160,5 +159,5 @@ ClusterScan gives six or seven files in output depending on whether the user has
 
 The program assigns an unique ID for each cluster during the analysis, joining the “C” letter with a progressive number starting from 1. The user can trace back a specific cluster at any time in the different output files simply looking at the ID reported in the corresponding column.
 
-## Other resources
-You can contact us by opening a new issue on GitHub or asking a new question on our dedicated [mailing list](https://groups.google.com/forum/#!forum/clusterscan-support).
+## Other resources:
+You can contact us by opening a new issue on GitHub or asking a new question on our dedicated [mailing list](https://groups.google.com/forum/#!forum/clusterscan-support). Take a look at our Wiki [here](https://github.com/pyrevo/ClusterScan/wiki).
