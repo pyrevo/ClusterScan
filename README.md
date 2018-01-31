@@ -3,7 +3,7 @@ ClusterScan is a tool to search for genomic clusters starting from genomic featu
 
 ***********************
 
-- [How the tool works](#how-the-tool-works)
+- [How it works](#how-it-works)
 - [Installation](#installation)
 	- [Installing Bedtools](#installing-bedtools)
 	- [Installing R and the ggplot2 library](#installing-r-and-the-ggplot2-library)
@@ -15,7 +15,7 @@ ClusterScan is a tool to search for genomic clusters starting from genomic featu
 
 ***********************
 
-## How the tool works:
+## How it works:
 ClusterScan can use two different algorithms that perform the search and it also offer filters to select the minimum number of features to call a cluster (that can’t be a number lower than 2). The two algorithms are:
 
 - **clusterdist**: scans the features using bedtools merge in order to find those features, for each category, which are separated by a maximum distance in base pairs that can be selected by the user (p: --distance). Some studies based on gene families, for example in human and mouse, have estimated genes within 500 Kb to be in cluster ([Niimura et al. 2003](https://www.ncbi.nlm.nih.gov/pubmed/14507991); [Tadepally et al. 2008](https://www.ncbi.nlm.nih.gov/pubmed/18559114)).
