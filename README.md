@@ -160,4 +160,4 @@ ClusterScan gives six or seven files in output depending on whether the user has
 The program assigns an unique ID for each cluster during the analysis, joining the “C” letter with a progressive number starting from 1. The user can trace back a specific cluster at any time in the different output files simply looking at the ID reported in the corresponding column.
 
 ## Other resources:
-You can contact us by opening a new issue on GitHub or asking a new question on our dedicated [mailing list](https://groups.google.com/forum/#!forum/clusterscan-support). Take a look at our Wiki [here](https://github.com/pyrevo/ClusterScan/wiki).
+You can contact us by opening a new issue on GitHub or asking a new question on our dedicated [mailing list](https://groups.google.com/forum/#!forum/clusterscan-support). Take a look at our Wiki [here](https://github.com/pyrevo/ClusterScan/wiki/Welcome-to-the-ClusterScan-wiki!).
