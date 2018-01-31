@@ -38,7 +38,8 @@ Options:
   -s, --slide=<bp>                  Sliding size [default: 250000].
   -k, --seed=<n>                    Number of standard deviations to identify a window which serves as the beginning of the cluster [default: 3].
   -e, --extension=<n>               Number of standard deviations to identify the window(s) which serve to extend the cluster [default: 2].
-  -c, --category LIST               Comma separated list of one or more specific categories to be analyzed, not separated by space [e.g. PF00001,PF00002].
+  -c, --category LIST               Comma separated list of one or more specific categories to be analyzed [e.g. PF00001,PF00002].
+                                    Useful when you need to perform the analysis only for specific categories in the ANNOTATION file.
   --info FILE                       Specify optional file to describe categories.
   --singletons                      Identify singletons after clusters and bystanders annotation.
   --version                         Show program version.
