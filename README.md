@@ -1,6 +1,20 @@
 # ClusterScan
 ClusterScan is a tool to search for genomic clusters starting from genomic feature locations and their annotations. It allow the user to scan an annotation file (BED format with locations of specific features such as gene, transcripts, regulatory regions or anything that can be mapped on a genome) and get clusters coordinates in output. In order to build annotated clusters, ClusterScan need an additional two-columns file, storing the feature ids and the corresponding categorical information (such as Gene Ontology classes, KEGG, Pfam accessions, etc). The user can also define a custom set of categories, which makes ClusterScan very flexible.
 
+***********************
+
+- [How the tool works](#how-the-tool-works)
+- [Installation](#installation)
+	- [Installing Bedtools](#installing-bedtools)
+	- [Installing R and the ggplot2 library](#installing-r-and-the-ggplot2-library)
+	- [Installing the required Python libraries](#installing-the-required-python-libraries)
+	- [Installing ClusterScan](#installing-clusterscan)
+- [Options](#options)
+- [Input/Output](#inputoutput)
+- [Other resources](#other-resources)
+
+***********************
+
 ## How the tool works:
 ClusterScan can use two different algorithms that perform the search and it also offer filters to select the minimum number of features to call a cluster (that can’t be a number lower than 2). The two algorithms are:
 
@@ -69,7 +83,7 @@ You can find more informations at:
 - [rpy2](https://rpy2.readthedocs.io/en/version_2.8.x/) (v2.8.3)
 
 
-# Installing ClusterScan
+### Installing ClusterScan
 Now, you can download and extract ClusterScan in your preferred directory:
 ```
 wget https://github.com/pyrevo/ClusterScan/archive/master.zip
