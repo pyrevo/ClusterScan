@@ -282,6 +282,12 @@ def main():
     cl_features["start"] += 1
     table["start"] += 1
 
+    if bystanders.empty:
+        table["n_bystanders"] = 'NA'
+        summary["n_bs"] = 'NA'
+        summary["max_bs"] = 'NA'
+        summary["min_bs"] = 'NA'
+
     cl_features.to_csv(feat_name, sep='\t', header=True, index=False)
     bystanders.to_csv(byst_name, sep='\t', header=True, index=False)
     table.to_csv(clus_name, sep='\t', header=True, index=False)
@@ -323,6 +329,6 @@ def main():
 # program execution
 if __name__ == '__main__':
     arguments = docopt(__doc__, version='ClusterScan 0.2.1')
-    #print arguments
+    # print arguments
     main()
     print "--- %s seconds ---" % (int(round(time.time() - start_time, 0)))
