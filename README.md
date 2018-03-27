@@ -12,7 +12,7 @@ ClusterScan is a tool to search for genomic clusters starting from genomic featu
 - [Docker installation](#docker-installation)
 	- [Installing docker engine](#installing-docker-engine)
 	- [Installing ClusterScan image](#installing-clusterscan-image)
-	- [Run ClusterScan through docker](#run-clusterscan-through-docker)
+	- [Running ClusterScan through docker](#running-clusterscan-through-docker)
 - [Options](#options)
 - [Input/Output](#inputoutput)
 - [Other resources](#other-resources)
@@ -106,7 +106,7 @@ If you visualize the ClusterScan help page, you can proceed to run your first an
 We have tested ClusterScan on [Ubuntu](https://www.ubuntu.com/) (v14.04LTS+). ClusterScan is distributed under the [GNU General Public License (GPL) Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## Docker installation:
-ClusterScan can also be used in a docker container. Docker is an open source project intended to provide tools to performs operating-system-level virtualization also known as containerization. More information can be found [here](https://www.docker.com/what-docker). In order to use ClusterScan in a docker container, you must install the docker engine and the docker ClusterScan image.
+ClusterScan can also be used in a docker container. Docker is an open source project intended to provide tools to performs operating-system-level virtualization also known as containerization. More information can be found [here](https://www.docker.com/what-docker). In order to use ClusterScan in a docker container, you must install the docker engine and the docker ClusterScan image. You can find a complete Linux installation guide of the docker engine following this [link](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 
 ### Installing docker engine
 If you already have the docker engine installed on your machine, you can skip this step. To install the docker engine you simply have to type:
@@ -153,7 +153,7 @@ docker ps -a
 docker rm <your container ID>
 ```
 
-### Run ClusterScan through docker
+### Running ClusterScan through docker
 To run ClusterScan type:
 ```
 docker run -it -v /full/path/to/data/folder:/data sangeslab/clusterscan bash
