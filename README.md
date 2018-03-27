@@ -4,11 +4,15 @@ ClusterScan is a tool to search for genomic clusters starting from genomic featu
 ***********************
 
 - [How it works](#how-it-works)
-- [Installation](#installation)
+- [Local installation](#local-installation)
 	- [Installing Bedtools](#installing-bedtools)
 	- [Installing R and the ggplot2 library](#installing-r-and-the-ggplot2-library)
 	- [Installing the required Python libraries](#installing-the-required-python-libraries)
 	- [Installing ClusterScan](#installing-clusterscan)
+- [Docker installation](#docker-installation)
+	- [Installing docker engine](#installing-docker-engine)
+	- [Installing ClusterScan image](#installing-clusterscan-image)
+	- [Run ClusterScan through docker](#run-clusterscan-through-docker)
 - [Options](#options)
 - [Input/Output](#inputoutput)
 - [Other resources](#other-resources)
@@ -22,8 +26,8 @@ ClusterScan can use two different algorithms that perform the search and it also
 
 - **clustermean**: divides the genome in sliding windows and calculates, for each category, the mean number of features and the standard deviation for each accession. After that, clustermean searches for those windows showing a Z-score bigger than a given value, i.e. containing a number of features higher or equal to the relation _mean+n*stdv_ in which *n* can be set by the user (p: --seed). Thus, the seed parameter set the number of standard deviations to identify a window which serves as the beginning of the cluster. After this step, the algorithm similarly tries to extend the cluster in both the directions starting from the seed using the same relation _mean+n*stdv_ in which *n* can be set again by the user (p: --extension). Thus, the extension parameter set the number of standard deviations to identify the window(s) which serve to extend the cluster. Lastly, clustermean trims the clusters in order to replace the cluster start/end represented by the most 5' feature start and the most 3' feature end respectively.
 
-## Installation:
-ClusterScan requires [Python](https://www.python.org/downloads/release/python-2714/) (v2.7.x). [Bedtools](https://github.com/arq5x/bedtools2) (v2.25.0+) and [R](https://www.r-project.org/) (v3.0.0+) are needed to be in the user path. In order to draw high quality clusters distributions for features in the top 10 clusters (by number of features) found, it is also required to install the R library [ggplot2](http://ggplot2.org/) (v2.0.0+).
+## Local installation:
+ClusterScan can be installed locally or used in a Docker container. Continue reading here the instructions to locally install the tool on your own machine. ClusterScan requires [Python](https://www.python.org/downloads/release/python-2714/) (v2.7.x). [Bedtools](https://github.com/arq5x/bedtools2) (v2.25.0+) and [R](https://www.r-project.org/) (v3.0.0+) are needed to be in the user path. In order to draw high quality clusters distributions for features in the top 10 clusters (by number of features) found, it is also required to install the R library [ggplot2](http://ggplot2.org/) (v2.0.0+).
 
 ### Installing Bedtools
 To install bedtools you need to download the package via GitHub and compile from source:
@@ -100,6 +104,65 @@ clusterscan.py -h
 If you visualize the ClusterScan help page, you can proceed to run your first analysis by following the [ClusterScan Tutorial](https://github.com/pyrevo/ClusterScan/wiki/ClusterScan-Tutorial).
 
 We have tested ClusterScan on [Ubuntu](https://www.ubuntu.com/) (v14.04LTS+). ClusterScan is distributed under the [GNU General Public License (GPL) Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
+## Docker installation:
+ClusterScan can also be used in a Docker container. Docker is an open source project intended to provide tools to performs operating-system-level virtualization also known as containerization. More information can be found [here](https://www.docker.com/what-docker). In order to use ClusterScan in a docker container, you must install the docker engine and the docker ClusterScan image.
+
+### Installing docker engine
+If you already have the docker engine installed on your machine, you can skip this step. To install the docker engine you simply have to type:
+```
+curl -fsSL https://get.docker.com/ | sh
+```
+If you haven't curl installed, you can obtain it by typing:
+```
+sudo apt install curl
+```
+Once you have the docker engine installed, you may want guarantee administrator permissions to your user:
+```
+sudo usermod -aG docker <your-user>
+```
+After this step you must exit and open a new terminal. You can test your docker engine installation with the command:
+```
+docker run hello-world
+```
+
+### Installing ClusterScan image
+To obtain the latest ClusterScan docker image type:
+```
+docker pull sangeslab/clusterscan:latest
+```
+You can test your docker ClusterScan installation by typing:
+```
+docker images
+```
+obtaining something like that:
+
+|REPOSITORY|TAG|IMAGE ID|CREATED|SIZE|
+|---|---|---|---|---|
+|sangeslab/clusterscan|latest|1bc62465dc7c|3 days ago|1.44GB|
+|hello-world|latest|f2a91732366c|4 months ago|1.85kB|
+
+To get rid of the ClusterScan image:
+```
+docker rmi -f sangeslab/clusterscan
+```
+you can also remove the created containers by tracking their IDs:
+```
+docker ps -a
+docker rm <your container ID>
+```
+
+### Run ClusterScan through docker
+To run ClusterScan type:
+```
+docker run -it -v /full/path/to/data/folder:/data sangeslab/clusterscan bash
+```
+and substitute _/full/path/to/data/folder_ with the complete path to the directory containing your input data.
+
+You can test whether CLusterScan is ready with:
+```
+clusterscan.py -h
+```
 
 ## Options:
 ClusterScan provides different options in order to finely tune the cluster search. Some of them are algorithm-specific whereas other are in common between clusterdist and clustermean:
