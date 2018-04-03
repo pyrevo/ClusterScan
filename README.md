@@ -156,7 +156,7 @@ docker rm <your container ID>
 ### Running ClusterScan through docker
 To run ClusterScan type:
 ```
-docker run -it -v /full/path/to/data/folder:/data sangeslab/clusterscan bash
+docker run --user $(id -u) -it -v /full/path/to/data/folder:/data sangeslab/clusterscan bash
 ```
 and substitute _/full/path/to/data/folder_ with the complete path to the directory containing your input data.
 
