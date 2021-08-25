@@ -328,7 +328,7 @@ def main():
 
 # program execution
 if __name__ == '__main__':
-    arguments = docopt(__doc__, version='ClusterScan 0.2.1')
+    arguments = docopt(__doc__, version='ClusterScan 0.3.0')
     # print arguments
     main()
     print "--- %s seconds ---" % (int(round(time.time() - start_time, 0)))

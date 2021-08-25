@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.3.0 - 2021-08-25
+### Added
+- .gitignore file.
+- environment.yml for conda env configuration.
+
 ## 0.2.2 - 2018-03-20
 ### Changed
 - NA instead of 0 when one category is used for the search.
@@ -18,7 +23,7 @@ All notable changes to this project will be documented in this file.
 - analysis duration benchmark in standard output.
 - summmary of the analysis in standard output.
 - "CHANGES.md" and "README.md".
-
+environmentenvironment
 ### Changed
 - improve _clustermean_ speed.
 

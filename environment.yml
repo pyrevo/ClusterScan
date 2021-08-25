@@ -1,0 +1,12 @@
+name: ClusterScan
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-ggplot2==2.2.1
+  - rpy2==2.8.5
+  - bedtools==2.26.0
+  - pandas==0.19.1
+  - pybedtools==0.7.8
+  - python==2.7.15
